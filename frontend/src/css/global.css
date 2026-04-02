@@ -1,0 +1,597 @@
+/* ============================================
+   CORPORACIÓN AKN — Design System v3
+   Ingeniería y Mantenimiento
+   Paleta: Naranja corporativo + Negro
+   ============================================ */
+/* ---------- Google Font ---------- */
+/* Using <link> tags in HTML instead */
+
+
+/* ---------- CSS Variables ---------- */
+:root {
+    --primary: #e8751a;
+    --primary-dark: #c75f0e;
+    --primary-light: #f59542;
+    --secondary: #111111;
+    --secondary-light: #1c1c1c;
+    --accent: #f4a623;
+    --accent-light: #ffc145;
+    --text-white: #f5f5f7;
+    --text-gray: #9ca3b0;
+    --text-dark: #111111;
+    --text-body: #4a5568;
+    --bg-dark: #0a0a0a;
+    --bg-card: #161616;
+    --bg-light: #f8f9fb;
+    --bg-white: #ffffff;
+    --border-subtle: rgba(232, 117, 26, 0.15);
+    --border-light: #e2e8f0;
+    --shadow-orange: 0 0 30px rgba(232, 117, 26, 0.2);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.08);
+    --shadow-card-dark: 0 8px 32px rgba(0, 0, 0, 0.22);
+    --shadow-hover: 0 20px 48px rgba(0, 0, 0, 0.12);
+    --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius: 16px;
+    --radius-sm: 8px;
+    --font: 'DM Sans', -apple-system, sans-serif;
+}
+
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--bg-white);
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+}
+
+
+/* ---------- Utility ---------- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.section-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 12px;
+    position: relative;
+    padding: 0 16px;
+}
+
+.section-label::before,
+.section-label::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 1px;
+    background: var(--primary);
+}
+
+.section-label::before {
+    left: -30px;
+}
+
+.section-label::after {
+    right: -30px;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--secondary);
+}
+
+.section-title-light {
+    color: var(--text-white);
+}
+
+.section-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-body);
+    max-width: 600px;
+    margin: 16px auto 0;
+}
+
+.section-subtitle-light {
+    color: var(--text-gray);
+}
+
+
+/* ---------- Scroll Reveal ---------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Stagger children */
+.reveal-stagger>* {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-stagger.visible>*:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.reveal-stagger.visible>*:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.reveal-stagger.visible>*:nth-child(3) {
+    transition-delay: 0.25s;
+}
+
+.reveal-stagger.visible>*:nth-child(4) {
+    transition-delay: 0.35s;
+}
+
+.reveal-stagger.visible>*:nth-child(5) {
+    transition-delay: 0.45s;
+}
+
+.reveal-stagger.visible>*:nth-child(6) {
+    transition-delay: 0.55s;
+}
+
+.reveal-stagger.visible>*:nth-child(7) {
+    transition-delay: 0.65s;
+}
+
+.reveal-stagger.visible>*:nth-child(8) {
+    transition-delay: 0.75s;
+}
+
+.reveal-stagger.visible>* {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(232, 117, 26, 0.35);
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: #fff;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-3px);
+}
+
+.btn-outline-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--secondary);
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid var(--border-light);
+}
+
+.btn-outline-dark:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+
+/* ---------- Values (from brochure) ---------- */
+.values {
+    background: var(--secondary);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.value-item {
+    text-align: center;
+    padding: 32px 16px;
+}
+
+.value-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    background: rgba(232, 117, 26, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--primary);
+}
+
+.value-icon i {
+    font-size: 1.6rem;
+    color: var(--primary);
+}
+
+.value-item h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.value-item p {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+
+/* ---------- Page Headers ---------- */
+.page-header {
+    position: relative;
+    padding: 160px 0 80px;
+    background: var(--secondary);
+    overflow: hidden;
+    text-align: center;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(232, 117, 26, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.page-header-breadcrumb {
+    font-size: 0.82rem;
+    color: var(--text-gray);
+    margin-bottom: 12px;
+}
+
+.page-header-breadcrumb a {
+    color: var(--primary);
+}
+
+.page-header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.page-header p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* ---------- CTA Banner ---------- */
+.cta-banner {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    padding: 64px 0;
+    text-align: center;
+}
+
+.cta-banner h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.cta-banner p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 28px;
+    font-size: 1.05rem;
+}
+
+.cta-banner .btn-white {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: var(--primary);
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.cta-banner .btn-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ---------- WhatsApp Float ---------- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25d366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+    animation: pulse-wp 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float i {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+@keyframes pulse-wp {
+
+    0%,
+    100% {
+        box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 6px 40px rgba(37, 211, 102, 0.6);
+    }
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 72px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    color: #333;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    opacity: 1;
+    pointer-events: none;
+}
+
+.whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-left-color: #fff;
+}
+
+
+/* Forms */
+.form-card {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(232, 117, 26, 0.1);
+}
+
+.form-card-light {
+    background: #fff;
+    padding: 40px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-card);
+}
+
+.form-card h3,
+.form-card-light h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.form-card h3 {
+    color: #fff;
+}
+
+.form-card-light h3 {
+    color: var(--secondary);
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-gray);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    color: #fff;
+    transition: var(--transition);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    background: rgba(232, 117, 26, 0.05);
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-group select option {
+    background: var(--secondary);
+}
+
+/* Light form variant */
+.form-card-light .form-group label {
+    color: var(--text-body);
+}
+
+.form-card-light .form-group input,
+.form-card-light .form-group select,
+.form-card-light .form-group textarea {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    border: 1px solid var(--border-light);
+}
+
+.form-card-light .form-group input:focus,
+.form-card-light .form-group select:focus,
+.form-card-light .form-group textarea:focus {
+    border-color: var(--primary);
+}
+
+.form-card-light .form-group select option {
+    background: #fff;
+    color: var(--text-dark);
+}

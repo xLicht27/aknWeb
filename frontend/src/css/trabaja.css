@@ -1,0 +1,58 @@
+/* ---------- Careers ---------- */
+.careers {
+    background: var(--secondary);
+}
+
+.careers-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.careers-info h3 {
+    color: var(--primary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.careers-info h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.careers-info p {
+    color: var(--text-gray);
+    margin-bottom: 24px;
+}
+
+.careers-perks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.perk {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: rgba(232, 117, 26, 0.08);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(232, 117, 26, 0.15);
+}
+
+.perk i {
+    color: var(--primary);
+}
+
+.perk span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-gray);
+}

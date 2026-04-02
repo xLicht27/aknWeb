@@ -1,0 +1,218 @@
+/* ---------- Hero ---------- */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--secondary);
+}
+
+.hero-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(135deg, rgba(11, 11, 11, 0.92), rgba(0, 0, 0, 0.85));
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80') center/cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 720px;
+    padding: 0 24px;
+}
+
+.hero .container {
+    width: 100%;
+}
+
+.hero-title {
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero-title .highlight {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-desc {
+    font-size: 1.15rem;
+    color: var(--text-gray);
+    margin-bottom: 36px;
+    max-width: 560px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+
+/* ---------- Counters ---------- */
+.counters {
+    background: var(--secondary);
+    padding: 60px 0;
+    border-top: 1px solid rgba(232, 117, 26, 0.1);
+}
+
+.counters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.counter-item {
+    text-align: center;
+}
+
+.counter-number {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.counter-number span {
+    font-size: 0.6em;
+}
+
+.counter-label {
+    font-size: 0.82rem;
+    color: var(--text-gray);
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+
+/* ---------- Clients Marquee (2 rows) ---------- */
+.clients {
+    background: var(--bg-light);
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.clients-marquee-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.clients-track {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 20px 0;
+}
+
+.clients-track.row-1 {
+    animation: marquee-left 60s linear infinite;
+}
+
+.clients-track.row-2 {
+    animation: marquee-right 60s linear infinite;
+}
+
+.client-logo {
+    height: 50px;
+    /* Altura fija para que todos se vean iguales */
+    width: 140px;
+    /* Ancho máximo para que no se peguen mucho */
+    object-fit: contain;
+    /* Ajusta la imagen sin deformarla */
+    filter: grayscale(100%);
+    /* Efecto premium: logos en gris */
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.client-logo img {
+    height: 32px;
+    width: auto;
+    filter: grayscale(1) brightness(0);
+    opacity: 0.55;
+    transition: var(--transition);
+}
+
+.client-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+    /* Efecto pequeño de agrandado */
+}
+
+/* Text-based logo fallback */
+.client-logo-text {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 16px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #111;
+    opacity: 0.45;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.client-logo-text:hover {
+    opacity: 0.85;
+}
+
+@keyframes marquee-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee-right {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .client-logo {
+        height: 35px;
+        width: 100px;
+    }
+
+    .clients-track {
+        gap: 30px;
+    }
+}

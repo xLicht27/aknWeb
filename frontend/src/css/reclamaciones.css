@@ -1,0 +1,87 @@
+/* ---------- Libro de Reclamaciones ---------- */
+.reclamaciones-intro {
+    background: var(--bg-light);
+    padding: 60px 0;
+}
+
+.reclamaciones-intro .info-box {
+    background: #fff;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-bottom: 24px;
+}
+
+.reclamaciones-intro .info-box h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 12px;
+}
+
+.reclamaciones-intro .info-box p,
+.reclamaciones-intro .info-box li {
+    font-size: 0.9rem;
+    color: var(--text-body);
+    line-height: 1.8;
+}
+
+.reclamaciones-intro .info-box ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.reclamaciones-form-section {
+    background: #fff;
+}
+
+.reclamaciones-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-note {
+    font-size: 0.82rem;
+    color: var(--text-body);
+    margin-top: 16px;
+    padding: 16px;
+    background: var(--bg-light);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--primary);
+}
+
+.footer-reclamaciones {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 10px 16px;
+    background: rgba(232, 117, 26, 0.08);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(232, 117, 26, 0.15);
+    transition: var(--transition);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.footer-reclamaciones:hover {
+    background: rgba(232, 117, 26, 0.15);
+}
+
+.footer-reclamaciones i {
+    font-size: 1.2rem;
+}
