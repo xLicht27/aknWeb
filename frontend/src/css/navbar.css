@@ -131,3 +131,88 @@
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
 }
+
+/* Dropdown Menu CSS */
+.nav-dropdown-container {
+    position: relative;
+}
+
+.nav-dropdown-trigger {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+    padding: 10px 0;
+}
+
+.navbar.scrolled .nav-dropdown-trigger {
+    color: var(--text-body);
+}
+
+.nav-dropdown-trigger.active,
+.nav-dropdown-trigger:hover {
+    color: var(--primary);
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    background: #fff;
+    min-width: 250px;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    padding: 15px 0;
+    z-index: 100;
+}
+
+/* Mostrar en Desktop con Hover */
+@media (min-width: 901px) {
+    .nav-dropdown-container:hover .nav-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+/* Lógica para móviles */
+@media (max-width: 900px) {
+    .nav-dropdown-menu {
+        position: static;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        background: transparent;
+        padding-left: 15px;
+        border-left: 1px solid var(--border-light);
+    }
+
+    /* Clase que activamos con el click en móviles */
+    .nav-dropdown-container.active .nav-dropdown-menu {
+        display: block;
+    }
+}
+
+.nav-dropdown-menu a {
+    color: var(--secondary) !important;
+    text-transform: none !important;
+    font-size: 0.9rem !important;
+    padding: 8px 20px !important;
+    display: block;
+}
+
+.nav-dropdown-menu a:hover {
+    color: var(--primary) !important;
+}

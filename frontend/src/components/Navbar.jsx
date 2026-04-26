@@ -5,20 +5,28 @@ import '../css/navbar.css';
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
     const location = useLocation();
+
+    // Cerrar menús al cambiar de ruta
+    useEffect(() => {
+        setDropdownOpen(false);
+        setMobileMenuOpen(false);
+    }, [location]);
 
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 60);
         };
-
         window.addEventListener('scroll', handleScroll);
         handleScroll();
-
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const closeMenu = () => setMobileMenuOpen(false);
+    const closeMenu = () => {
+        setMobileMenuOpen(false);
+        setDropdownOpen(false);
+    };
 
     const isActive = (path) => location.pathname === path;
 
@@ -26,12 +34,31 @@ export default function Navbar() {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
             <div className="container">
                 <Link to="/" className="nav-logo" onClick={closeMenu}>
-                    <img src='../public/img/logo.png' className='nav-logo-icon'></img>
+                    <img src='../public/img/logo.png' className='nav-logo-icon' alt="Logo"></img>
                 </Link>
 
                 <div className={`nav-links ${mobileMenuOpen ? 'open' : ''}`} id="navLinks">
                     <Link to="/" className={isActive('/') ? 'active' : ''} onClick={closeMenu}>Inicio</Link>
-                    <Link to="/servicios" className={isActive('/servicios') ? 'active' : ''} onClick={closeMenu}>Servicios</Link>
+
+                    <div className={`nav-dropdown-container ${dropdownOpen ? 'active' : ''}`}>
+                        <div
+                            className={`nav-dropdown-trigger ${location.pathname.includes('/servicios') ? 'active' : ''}`}
+                            onClick={() => setDropdownOpen(!dropdownOpen)}
+                        >
+                            Servicios <i className="fas fa-chevron-down"></i>
+                        </div>
+                        <div className={`nav-dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
+                            <Link to="/servicios/tableros-electricos" onClick={closeMenu}>Tableros Eléctricos</Link>
+                            <Link to="/servicios/analisis-sistema-electrico" onClick={closeMenu}>Análisis del Sistema Eléctrico</Link>
+                            <Link to="/servicios/grupos-electrogenos" onClick={closeMenu}>Grupos Electrógenos</Link>
+                            <Link to="/servicios/equipos-de-proteccion" onClick={closeMenu}>Equipos de Protección</Link>
+                            <Link to="/servicios/sistema-de-media-tension" onClick={closeMenu}>Sistema de Media Tensión</Link>
+                            <Link to="/servicios/eficiencia-energetica" onClick={closeMenu}>Eficiencia Energética</Link>
+                            <Link to="/servicios/redes-contra-incendios" onClick={closeMenu}>Redes Contra Incendios</Link>
+                            <Link to="/servicios/sistemas-de-bombeo" onClick={closeMenu}>Sistemas de Bombeo</Link>
+                        </div>
+                    </div>
+
                     <Link to="/nosotros" className={isActive('/nosotros') ? 'active' : ''} onClick={closeMenu}>Nosotros</Link>
                     <Link to="/proyectos" className={isActive('/proyectos') ? 'active' : ''} onClick={closeMenu}>Proyectos</Link>
                     <Link to="/noticias" className={isActive('/noticias') ? 'active' : ''} onClick={closeMenu}>Noticias</Link>
