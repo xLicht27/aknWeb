@@ -9,6 +9,7 @@ import Nosotros from './pages/Nosotros';
 import Proyectos from './pages/Proyectos';
 import TrabajaConNosotros from './pages/TrabajaConNosotros';
 import Contacto from './pages/Contacto';
+import Reclamaciones from './pages/Reclamaciones';
 import TablerosElectricos from './pages/servicios/TablerosElectricos';
 import AnalisisSistemaElectrico from './pages/servicios/AnalisisSistemaElectrico';
 import GruposElectrogenos from './pages/servicios/GruposElectrogenos';
@@ -41,6 +42,7 @@ export default function App() {
           <Route path="/noticias" element={<Noticias />} />
           <Route path="/trabajaconnosotros" element={<TrabajaConNosotros />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/reclamaciones" element={<Reclamaciones />} />
           {/*en caso de ruta inexistente */}
           <Route path="*" element={<Home />} />
         </Routes>

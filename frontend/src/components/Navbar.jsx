@@ -62,7 +62,7 @@ export default function Navbar() {
                     <Link to="/nosotros" className={isActive('/nosotros') ? 'active' : ''} onClick={closeMenu}>Nosotros</Link>
                     <Link to="/proyectos" className={isActive('/proyectos') ? 'active' : ''} onClick={closeMenu}>Proyectos</Link>
                     <Link to="/noticias" className={isActive('/noticias') ? 'active' : ''} onClick={closeMenu}>Noticias</Link>
-                    <Link to="/trabajaconnosotros" className={isActive('/trabaja') ? 'active' : ''} onClick={closeMenu}>Trabaja con Nosotros</Link>
+                    <Link to="/trabajaconnosotros" className={isActive('/trabajaconnosotros') ? 'active' : ''} onClick={closeMenu}>Trabaja con Nosotros</Link>
                     <Link to="/contacto" className={`nav-cta ${isActive('/contacto') ? 'active' : ''}`} onClick={closeMenu}>Contacto</Link>
                 </div>
 

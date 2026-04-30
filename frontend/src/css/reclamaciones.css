@@ -33,12 +33,31 @@
 }
 
 .reclamaciones-form-section {
-    background: #fff;
+    background: var(--bg-dark);
+    color: var(--text-white);
 }
 
 .reclamaciones-form {
     max-width: 800px;
     margin: 0 auto;
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: var(--shadow-card-dark);
+}
+
+.reclamaciones-form label {
+    color: var(--text-white);
+    opacity: 0.9;
+}
+
+.reclamaciones-form h3 {
+    color: var(--primary) !important;
+}
+
+.reclamaciones-form hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .form-row {

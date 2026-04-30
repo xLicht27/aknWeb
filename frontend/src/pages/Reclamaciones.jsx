@@ -1,5 +1,10 @@
 import { useState } from 'react'
 import { enviarReclamacion } from '../api'
+import { Link } from 'react-router-dom'
+import '../css/global.css'
+import '../css/responsive.css'
+import '../css/reclamaciones.css'
+
 
 export default function Reclamaciones() {
   const [form, setForm] = useState({
@@ -47,15 +52,15 @@ export default function Reclamaciones() {
         <div className="container">
           <div className="reclamaciones-form" style={{ maxWidth: 600, margin: '0 auto', textAlign: 'center', padding: 40 }}>
             <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
-            <h2 style={{ color: 'var(--secondary)', marginBottom: 12 }}>Reclamación Registrada</h2>
-            <p style={{ color: 'var(--text-body)', marginBottom: 24 }}>
+            <h2 style={{ color: 'var(--primary)', marginBottom: 12 }}>Reclamación Registrada</h2>
+            <p style={{ color: 'var(--text-white)', marginBottom: 24 }}>
               Su {resultado.codigo_seguimiento.includes('-') ? form.tipo_solicitud : 'solicitud'} fue registrada exitosamente.
             </p>
             <div style={{ background: '#111', color: 'var(--primary)', padding: '24px', borderRadius: 12, marginBottom: 24 }}>
               <div style={{ fontSize: 13, color: '#999', marginBottom: 8 }}>CÓDIGO DE SEGUIMIENTO</div>
               <div style={{ fontSize: 32, fontWeight: 900, letterSpacing: 4 }}>{resultado.codigo_seguimiento}</div>
             </div>
-            <p style={{ color: 'var(--text-body)', fontSize: 14 }}>{resultado.mensaje}</p>
+            <p style={{ color: 'var(--text-white)', fontSize: 14 }}>{resultado.mensaje}</p>
             <p style={{ color: '#999', fontSize: 13, marginTop: 8 }}>
               Recibirá una copia en su correo electrónico.
             </p>
@@ -66,13 +71,18 @@ export default function Reclamaciones() {
   }
 
   return (
+
+
     <section className="reclamaciones-form-section section-padding">
       <div className="container">
+
         <div className="section-header reveal">
           <div className="section-label">Formulario</div>
-          <h2 className="section-title">Hoja de Reclamación</h2>
-          <p className="section-subtitle">Complete todos los campos obligatorios (*) para registrar su reclamo o queja.</p>
+          <h2 className="section-title section-title-light">Hoja de Reclamación</h2>
+          <p className="section-subtitle section-subtitle-light">Complete todos los campos obligatorios (*) para registrar su reclamo o queja.</p>
         </div>
+
+
 
         <div className="reclamaciones-form reveal">
           <form onSubmit={handleSubmit}>
@@ -112,7 +122,7 @@ export default function Reclamaciones() {
                 <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="correo@ejemplo.com" required /></div>
             </div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid var(--border-light)', margin: '32px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid rgba(255, 255, 255, 0.1)', margin: '32px 0' }} />
 
             {/* SECCIÓN 2 */}
             <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--primary)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: 1 }}>
@@ -134,7 +144,7 @@ export default function Reclamaciones() {
               <textarea name="descripcion_bien" value={form.descripcion_bien} onChange={handleChange}
                 placeholder="Describa el producto o servicio que adquirió..." required /></div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid var(--border-light)', margin: '32px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid rgba(255, 255, 255, 0.1)', margin: '32px 0' }} />
 
             {/* SECCIÓN 3 */}
             <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--primary)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: 1 }}>
@@ -154,14 +164,14 @@ export default function Reclamaciones() {
 
             <div className="form-group"><label>Detalle de la reclamación *</label>
               <textarea name="detalle_reclamacion" value={form.detalle_reclamacion} onChange={handleChange}
-                style={{ minHeight: 140 }} required
+                style={{ minHeight: 140, background: 'rgba(255, 255, 255, 0.05)', color: '#fff' }} required
                 placeholder="Describa los hechos que motivan su reclamo o queja..." /></div>
 
             <div className="form-group"><label>Pedido del consumidor *</label>
               <textarea name="pedido_consumidor" value={form.pedido_consumidor} onChange={handleChange} required
                 placeholder="¿Qué solución espera de Corporación AKN?" /></div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid var(--border-light)', margin: '32px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid rgba(255, 255, 255, 0.1)', margin: '32px 0' }} />
 
             {error && (
               <div style={{ background: '#f8d7da', border: '1px solid #dc3545', borderRadius: 8, padding: '12px 16px', marginBottom: 16, color: '#721c24' }}>
@@ -173,7 +183,7 @@ export default function Reclamaciones() {
               <label style={{ display: 'flex', alignItems: 'flex-start', gap: 10, cursor: 'pointer' }}>
                 <input type="checkbox" name="acepto_condiciones" checked={form.acepto_condiciones}
                   onChange={handleChange} style={{ marginTop: 4, width: 18, height: 18, accentColor: 'var(--primary)', cursor: 'pointer' }} />
-                <span>Declaro que la información proporcionada es veraz y acepto que Corporación AKN S.A.
+                <span style={{ color: 'var(--text-white)' }}>Declaro que la información proporcionada es veraz y acepto que Corporación AKN S.A.
                   procese mis datos personales conforme a la Ley N° 29733. *</span>
               </label>
             </div>

@@ -33,11 +33,11 @@ export default function Footer() {
 
                     <div className="footer-col">
                         <h4>Servicios</h4>
-                        <Link to="/servicios">Grupos Electrógenos</Link>
-                        <Link to="/servicios">Tableros Eléctricos</Link>
-                        <Link to="/servicios">Cableado Industrial</Link>
-                        <Link to="/servicios">Mantenimiento</Link>
-                        <Link to="/servicios">Energía Renovable</Link>
+                        <Link to="/servicios/grupos-electrogenos">Grupos Electrógenos</Link>
+                        <Link to="/servicios/tableros-electricos">Tableros Eléctricos</Link>
+                        <Link to="/servicios/analisis-sistema-electrico">Análisis de Sistema</Link>
+                        <Link to="/servicios/eficiencia-energetica">Eficiencia Energética</Link>
+                        <Link to="/servicios/sistema-de-media-tension">Media Tensión</Link>
                     </div>
 
                     <div className="footer-col">
@@ -46,7 +46,7 @@ export default function Footer() {
                         <Link to="/nosotros#cultura">Misión y Visión</Link>
                         <Link to="/proyectos">Proyectos</Link>
                         <Link to="/noticias">Noticias</Link>
-                        <Link to="/trabaja">Trabaja con Nosotros</Link>
+                        <Link to="/trabajaconnosotros">Trabaja con Nosotros</Link>
                     </div>
 
                     <div className="footer-col">

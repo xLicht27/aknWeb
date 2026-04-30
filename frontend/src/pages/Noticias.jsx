@@ -140,7 +140,7 @@ const Noticias = () => {
                 className="whatsapp-float"
             >
                 <i className="fab fa-whatsapp"></i>
-                <div className="whatsapp-tooltip">¡Escríbenos por WhatsApp!</div>
+                <div className="whatsapp-tooltip">¡Escríbenos!</div>
             </a>
         </div>
     );
