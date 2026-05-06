@@ -6,35 +6,6 @@ import '../css/global.css';
 import '../css/responsive.css';
 
 const TrabajaConNosotros = () => {
-  const [form, setForm] = useState({
-    nombre: '',
-    email: '',
-    telefono: '',
-    cargo_postulado: '',
-    vacante_id: null,
-    mensaje: '',
-  });
-  const [estado, setEstado] = useState('idle');
-  const [mensaje, setMensaje] = useState('');
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setEstado('loading');
-    try {
-      const res = await enviarPostulacion(form);
-      setMensaje(res.data.mensaje);
-      setEstado('success');
-    } catch (err) {
-      setMensaje(err.response?.data?.error || 'Error al enviar. Intente de nuevo.');
-      setEstado('error');
-    }
-  };
-
   return (
     <div className="trabaja-page">
       <section className="page-header">
@@ -50,29 +21,29 @@ const TrabajaConNosotros = () => {
       </section>
 
       {/* WHY JOIN US */}
-      <section className="section-padding" style={{ background: 'var(--bg-light)' }}>
+      <section className="section-padding bg-light-section">
         <div className="container">
           <div className="section-header reveal">
             <div className="section-label">¿Por qué AKN?</div>
             <h2 className="section-title">Beneficios de ser parte del equipo</h2>
           </div>
           <div className="services-grid reveal-stagger">
-            <div className="service-card" style={{ cursor: 'default' }}>
+            <div className="service-card cursor-default">
               <div className="service-icon"><i className="fas fa-chart-line"></i></div>
               <h3>Crecimiento Profesional</h3>
               <p>Plan de carrera estructurado con oportunidades de ascenso basadas en mérito y desempeño.</p>
             </div>
-            <div className="service-card" style={{ cursor: 'default' }}>
+            <div className="service-card cursor-default">
               <div className="service-icon"><i className="fas fa-graduation-cap"></i></div>
               <h3>Capacitación Continua</h3>
               <p>Programas de formación técnica, certificaciones industriales y acceso a eventos especializados.</p>
             </div>
-            <div className="service-card" style={{ cursor: 'default' }}>
+            <div className="service-card cursor-default">
               <div className="service-icon"><i className="fas fa-hand-holding-usd"></i></div>
               <h3>Remuneración Competitiva</h3>
               <p>Salarios por encima del mercado, bonos por desempeño y beneficios de ley completos.</p>
             </div>
-            <div className="service-card" style={{ cursor: 'default' }}>
+            <div className="service-card cursor-default">
               <div className="service-icon"><i className="fas fa-shield-alt"></i></div>
               <h3>Seguridad y Bienestar</h3>
               <p>Cultura de seguridad primero. Equipos de protección de última generación y seguros médicos.</p>
@@ -97,52 +68,20 @@ const TrabajaConNosotros = () => {
               </div>
             </div>
 
-            <div className="form-card reveal-right">
-              <h3>Formulario de Postulación</h3>
-
-              {estado === 'success' && (
-                <div style={{ background: '#1a3a2a', border: '1px solid #28a745', borderRadius: 8, padding: '16px', marginBottom: 20, color: '#5cb85c' }}>
-                  <i className="fas fa-check-circle" style={{ marginRight: 8 }}></i>
-                  {mensaje}
-                </div>
-              )}
-
-              {estado === 'error' && (
-                <div style={{ background: '#3a1a1a', border: '1px solid #dc3545', borderRadius: 8, padding: '16px', marginBottom: 20, color: '#e57373' }}>
-                  <i className="fas fa-exclamation-circle" style={{ marginRight: 8 }}></i>
-                  {mensaje}
-                </div>
-              )}
-
-              {estado !== 'success' && (
-                <form onSubmit={handleSubmit}>
-                  <div className="form-group">
-                    <label>Nombre completo *</label>
-                    <input type="text" name="nombre" value={form.nombre} onChange={handleChange} placeholder="Tu nombre" required />
-                  </div>
-                  <div className="form-group">
-                    <label>Correo electrónico *</label>
-                    <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="correo@ejemplo.com" required />
-                  </div>
-                  <div className="form-group">
-                    <label>Teléfono</label>
-                    <input type="tel" name="telefono" value={form.telefono} onChange={handleChange} placeholder="+51 900 000 000" />
-                  </div>
-                  <div className="form-group">
-                    <label>Cargo al que postula *</label>
-                    <input type="text" name="cargo_postulado" value={form.cargo_postulado} onChange={handleChange} placeholder="Ej: Técnico electricista, Ingeniero..." required />
-                  </div>
-                  <div className="form-group">
-                    <label>Mensaje / Experiencia</label>
-                    <textarea name="mensaje" value={form.mensaje} onChange={handleChange} placeholder="Cuéntanos brevemente tu experiencia profesional..."></textarea>
-                  </div>
-                  <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center' }} disabled={estado === 'loading'}>
-                    {estado === 'loading'
-                      ? <><i className="fas fa-spinner fa-spin"></i> Enviando...</>
-                      : <><i className="fas fa-paper-plane"></i> Enviar Postulación</>}
-                  </button>
-                </form>
-              )}
+            <div className="form-card reveal-right text-center">
+              <h3>Portales de Empleo</h3>
+              <p style={{ color: 'var(--text-gray)', marginBottom: '24px' }}>
+                Encuentra nuestras vacantes actuales y postula a través de nuestros canales oficiales:
+              </p>
+              
+              <div className="job-portals">
+                <a href="https://www.linkedin.com/company/corporacion-akn/" target="_blank" rel="noopener noreferrer" className="btn-portal btn-linkedin">
+                  <i className="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://pe.computrabajo.com/" target="_blank" rel="noopener noreferrer" className="btn-portal btn-computrabajo">
+                  <i className="fas fa-briefcase"></i> CompuTrabajo
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -156,7 +95,7 @@ const TrabajaConNosotros = () => {
         className="whatsapp-float"
       >
         <i className="fab fa-whatsapp"></i>
-        <div className="whatsapp-tooltip">¡Escríbenos por WhatsApp!</div>
+        <div className="whatsapp-tooltip">¡Escríbenos!</div>
       </a>
     </div>
   );

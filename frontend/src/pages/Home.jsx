@@ -122,7 +122,7 @@ const Home = () => {
                             eléctricos y mantenimiento preventivo para grandes infraestructuras.
                         </p>
                         <div className="hero-buttons">
-                            <Link to="/servicios" className="btn-primary">
+                            <Link to="/servicios/tableros-electricos" className="btn-primary">
                                 <i className="fas fa-cogs"></i> Nuestros Servicios
                             </Link>
                             <Link to="/contacto" className="btn-outline">
@@ -168,33 +168,33 @@ const Home = () => {
                         </p>
                     </div>
                     <div className="services-grid reveal-stagger">
-                        <Link to="/servicios#electrogenos" className="service-card">
+                        <Link to="/servicios/grupos-electrogenos" className="service-card">
                             <div className="service-icon"><i className="fas fa-charging-station"></i></div>
                             <h3>Grupos Electrógenos</h3>
                             <p>Venta, instalación, sincronismo y mantenimiento de grupos electrógenos de alta potencia.</p>
                             <span className="learn-more">Más información <i className="fas fa-arrow-right"></i></span>
                         </Link>
-                        <Link to="/servicios#tableros" className="service-card">
+                        <Link to="/servicios/tableros-electricos" className="service-card">
                             <div className="service-icon"><i className="fas fa-project-diagram"></i></div>
                             <h3>Tableros Eléctricos</h3>
                             <p>Diseño, fabricación y montaje de tableros de distribución, control y automatización.</p>
                             <span className="learn-more">Más información <i className="fas fa-arrow-right"></i></span>
                         </Link>
-                        <Link to="/servicios#cableado" className="service-card">
+                        <Link to="/servicios/sistema-de-media-tension" className="service-card">
                             <div className="service-icon"><i className="fas fa-network-wired"></i></div>
                             <h3>Cableado Industrial</h3>
                             <p>Instalación de bandejas portacables, ductería y tendido de conductores de gran sección.</p>
                             <span className="learn-more">Más información <i className="fas fa-arrow-right"></i></span>
                         </Link>
-                        <Link to="/servicios#mantenimiento" className="service-card">
+                        <Link to="/servicios/analisis-sistema-electrico" className="service-card">
                             <div className="service-icon"><i className="fas fa-wrench"></i></div>
                             <h3>Mantenimiento Preventivo</h3>
                             <p>Planes programados para garantizar la continuidad operativa de sus sistemas eléctricos.</p>
                             <span className="learn-more">Más información <i className="fas fa-arrow-right"></i></span>
                         </Link>
                     </div>
-                    <div style={{ textAlign: 'center', marginTop: '48px' }} className="reveal">
-                        <Link to="/servicios" className="btn-outline-dark">
+                    <div className="text-center mt-48 reveal">
+                        <Link to="/servicios/tableros-electricos" className="btn-outline-dark">
                             <i className="fas fa-th-list"></i> Ver Todos los Servicios
                         </Link>
                     </div>
@@ -226,7 +226,7 @@ const Home = () => {
                                 <div className="about-feature"><i className="fas fa-check-circle"></i><span>Calidad</span></div>
                                 <div className="about-feature"><i className="fas fa-leaf"></i><span>Sostenibilidad</span></div>
                             </div>
-                            <div style={{ marginTop: '28px' }}>
+                            <div className="mt-28">
                                 <Link to="/nosotros" className="btn-outline-dark">
                                     <i className="fas fa-arrow-right"></i> Conocer Más
                                 </Link>
@@ -240,7 +240,7 @@ const Home = () => {
             <section className="values section-padding">
                 <div className="container">
                     <div className="section-header reveal">
-                        <div className="section-label" style={{ color: 'var(--primary-light)' }}>Nuestros Pilares</div>
+                        <div className="section-label text-primary-light">Nuestros Pilares</div>
                         <h2 className="section-title section-title-light">Lo que nos Define</h2>
                     </div>
                     <div className="values-grid reveal-stagger">
@@ -302,7 +302,7 @@ const Home = () => {
                             </div>
                         </Link>
                     </div>
-                    <div style={{ textAlign: 'center', marginTop: '48px' }} className="reveal">
+                    <div className="text-center mt-48 reveal">
                         <Link to="/proyectos" className="btn-outline-dark">
                             <i className="fas fa-images"></i> Ver Todos los Proyectos
                         </Link>

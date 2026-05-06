@@ -104,7 +104,7 @@ const Contacto = () => {
                 <div className="contact-item-text">
                   <h4>WhatsApp</h4>
                   <p>
-                    <a href="https://wa.me/5114513488" target="_blank" rel="noreferrer" style={{ color: 'var(--primary)', fontWeight: 600 }}>
+                    <a href="https://wa.me/5114513488" target="_blank" rel="noreferrer" className="text-primary font-semibold">
                       Iniciar conversación →
                     </a>
                   </p>
@@ -134,14 +134,14 @@ const Contacto = () => {
               <h3>Solicitar Cotización</h3>
 
               {estado === 'success' && (
-                <div style={{ background: '#d4edda', border: '1px solid #28a745', borderRadius: 8, padding: '16px', marginBottom: 20, color: '#155724' }}>
+                <div className="alert-success">
                   <i className="fas fa-check-circle" style={{ marginRight: 8 }}></i>
                   {mensaje}
                 </div>
               )}
 
               {estado === 'error' && (
-                <div style={{ background: '#f8d7da', border: '1px solid #dc3545', borderRadius: 8, padding: '16px', marginBottom: 20, color: '#721c24' }}>
+                <div className="alert-error">
                   <i className="fas fa-exclamation-circle" style={{ marginRight: 8 }}></i>
                   {mensaje}
                 </div>
@@ -177,7 +177,7 @@ const Contacto = () => {
                     <label>Descripción del proyecto *</label>
                     <textarea name="descripcion" value={form.descripcion} onChange={handleChange} required placeholder="Cuéntenos sobre el servicio que necesita..."></textarea>
                   </div>
-                  <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center' }} disabled={estado === 'loading'}>
+                  <button type="submit" className="btn-primary w-full flex-center" disabled={estado === 'loading'}>
                     {estado === 'loading'
                       ? <><i className="fas fa-spinner fa-spin"></i> Enviando...</>
                       : <><i className="fas fa-paper-plane"></i> Enviar Solicitud</>}

@@ -43,7 +43,7 @@ const Nosotros = () => {
                             <p>
                                 Nuestro equipo multidisciplinario de ingenieros y técnicos especializados trabaja bajo los más estrictos estándares de seguridad y calidad, garantizando la continuidad operativa de cada uno de nuestros clientes.
                             </p>
-                            <div style={{ marginTop: '24px' }}>
+                            <div className="mt-24">
                                 <Link to="/contacto" className="btn-primary">
                                     <i className="fas fa-envelope"></i> Contáctenos
                                 </Link>
@@ -54,13 +54,13 @@ const Nosotros = () => {
             </section>
 
             {/* TIMELINE */}
-            <section className="section-padding" style={{ background: 'var(--bg-light)' }}>
+            <section className="section-padding bg-light-section">
                 <div className="container">
                     <div className="section-header reveal">
                         <div className="section-label">Nuestra Trayectoria</div>
                         <h2 className="section-title">Hitos Importantes</h2>
                     </div>
-                    <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+                    <div className="max-w-700 mx-auto">
                         <div className="timeline reveal">
                             <div className="timeline-item">
                                 <span className="year">2010</span>
@@ -128,7 +128,7 @@ const Nosotros = () => {
             <section className="values section-padding">
                 <div className="container">
                     <div className="section-header reveal">
-                        <div className="section-label" style={{ color: 'var(--primary-light)' }}>Nuestros Pilares</div>
+                        <div className="section-label text-primary-light">Nuestros Pilares</div>
                         <h2 className="section-title section-title-light">Lo que nos Define</h2>
                     </div>
                     <div className="values-grid reveal-stagger">
@@ -199,6 +199,16 @@ const Nosotros = () => {
                     </Link>
                 </div>
             </section>
+            {/* WhatsApp Float */}
+            <a
+                href="https://wa.me/5114513488?text=Hola%2C%20me%20interesa%20solicitar%20información"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="whatsapp-float"
+            >
+                <i className="fab fa-whatsapp"></i>
+                <div className="whatsapp-tooltip">¡Escríbenos!</div>
+            </a>
         </div>
     );
 };

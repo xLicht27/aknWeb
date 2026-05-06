@@ -113,19 +113,19 @@ const Proyectos = () => {
                 <div className="container">
                     <div className="counters-grid reveal-stagger">
                         <div className="counter-item">
-                            <div className="counter-number" style={{ color: 'var(--primary-light)' }}>350+</div>
+                            <div className="counter-number text-primary-light">350+</div>
                             <div className="counter-label">Proyectos Entregados</div>
                         </div>
                         <div className="counter-item">
-                            <div className="counter-number" style={{ color: 'var(--primary-light)' }}>19+</div>
+                            <div className="counter-number text-primary-light">19+</div>
                             <div className="counter-label">Clientes Corporativos</div>
                         </div>
                         <div className="counter-item">
-                            <div className="counter-number" style={{ color: 'var(--primary-light)' }}>6+</div>
+                            <div className="counter-number text-primary-light">6+</div>
                             <div className="counter-label">Sectores Industriales</div>
                         </div>
                         <div className="counter-item">
-                            <div className="counter-number" style={{ color: 'var(--primary-light)' }}>100%</div>
+                            <div className="counter-number text-primary-light">100%</div>
                             <div className="counter-label">Satisfacción</div>
                         </div>
                     </div>

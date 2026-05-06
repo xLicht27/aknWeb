@@ -153,6 +153,79 @@ select {
     color: var(--text-gray);
 }
 
+.bg-light-section {
+    background: var(--bg-light);
+}
+
+.cursor-default {
+    cursor: default !important;
+}
+
+.mt-24 {
+    margin-top: 24px;
+}
+
+.mt-28 {
+    margin-top: 28px;
+}
+
+.mt-48 {
+    margin-top: 48px;
+}
+
+.max-w-700 {
+    max-width: 700px;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-primary-light {
+    color: var(--primary-light) !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.font-semibold {
+    font-weight: 600 !important;
+}
+
+.w-full {
+    width: 100% !important;
+}
+
+.flex-center {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.alert-success {
+    background: #d4edda;
+    border: 1px solid #28a745;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    color: #155724;
+}
+
+.alert-error {
+    background: #f8d7da;
+    border: 1px solid #dc3545;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    color: #721c24;
+}
+
 
 /* ---------- Scroll Reveal ---------- */
 .reveal {

@@ -199,6 +199,17 @@ export default function Reclamaciones() {
           </form>
         </div>
       </div>
+
+      {/* WhatsApp Float */}
+      <a
+        href="https://wa.me/5114513488?text=Hola%2C%20me%20interesa%20solicitar%20información"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whatsapp-float"
+      >
+        <i className="fab fa-whatsapp"></i>
+        <div className="whatsapp-tooltip">¡Escríbenos!</div>
+      </a>
     </section>
   )
 }
