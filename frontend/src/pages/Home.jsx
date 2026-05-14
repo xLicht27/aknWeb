@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import api from '../api/ghost';
 import '../css/index.css'
 import '../css/servicios.css'
 import '../css/proyectos.css'
@@ -8,6 +9,33 @@ import '../css/global.css'
 import '../css/responsive.css'
 
 const Home = () => {
+    const [proyectosDestacados, setProyectosDestacados] = useState([]);
+    const [loadingProyectos, setLoadingProyectos] = useState(true);
+
+    useEffect(() => {
+        const fetchProyectos = async () => {
+            try {
+                const res = await api.posts.browse({
+                    filter: 'tag:proyecto,tag:proyectos',
+                    limit: 3,
+                    include: 'tags'
+                });
+                setProyectosDestacados(res);
+            } catch (err) {
+                console.error("Error cargando proyectos en Home:", err);
+            } finally {
+                setLoadingProyectos(false);
+            }
+        };
+
+        fetchProyectos();
+    }, []);
+
+    const formatDate = (dateString) => {
+        const options = { day: '2-digit', month: 'long', year: 'numeric' };
+        return new Date(dateString).toLocaleDateString('es-ES', options);
+    };
+
     useEffect(() => {
         /* ---- Lógica de Contadores (initCounters) ---- */
         const section = document.getElementById('counters');
@@ -277,30 +305,34 @@ const Home = () => {
                         <p className="section-subtitle">Algunos de los proyectos más importantes que hemos ejecutado con éxito.</p>
                     </div>
                     <div className="projects-grid reveal-stagger">
-                        <Link to="/proyectos" className="project-card">
-                            <img src="/img/hero/IMG_0468.webp" alt="Proyecto Industrial" />
-                            <div className="project-overlay">
-                                <span className="tag">Instalación Eléctrica</span>
-                                <h3>Planta Industrial del Sur</h3>
-                                <p>5,000m de cableado AT</p>
+                        {loadingProyectos ? (
+                            <div className="text-center w-full" style={{ gridColumn: '1 / -1' }}>
+                                <div className="loader" style={{ margin: '0 auto 20px' }}></div>
+                                <p>Cargando proyectos...</p>
                             </div>
-                        </Link>
-                        <Link to="/proyectos" className="project-card">
-                            <img src="/img/hero/IMG_0898.webp" alt="Centro Comercial" />
-                            <div className="project-overlay">
-                                <span className="tag">Grupos Electrógenos</span>
-                                <h3>Centro Comercial Metropolitano</h3>
-                                <p>3 grupos electrógenos en sincronismo</p>
+                        ) : proyectosDestacados.length > 0 ? (
+                            proyectosDestacados.map((proy) => (
+                                <div key={proy.id} className="project-card">
+                                    <div className="project-card-img">
+                                        <img src={proy.feature_image || 'https://i0.wp.com/impactify.io/wp-content/uploads/2024/05/placeholder-5.png?ssl=1'} alt={proy.title} />
+                                    </div>
+                                    <div className="project-card-body">
+                                        <span className="date">
+                                            {formatDate(proy.published_at)} · {proy.primary_tag?.name || 'Proyecto'}
+                                        </span>
+                                        <h3>{proy.title}</h3>
+                                        <p>{proy.excerpt}</p>
+                                        <Link to={`/proyectos/${proy.slug}`} className="read-more">
+                                            Ver proyecto completo <i className="fas fa-arrow-right"></i>
+                                        </Link>
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <div className="text-center w-full" style={{ gridColumn: '1 / -1' }}>
+                                <p>Próximamente más proyectos destacados.</p>
                             </div>
-                        </Link>
-                        <Link to="/proyectos" className="project-card">
-                            <img src="/img/hero/IMG_1434.webp" alt="Complejo Minero" />
-                            <div className="project-overlay">
-                                <span className="tag">Mantenimiento</span>
-                                <h3>Complejo Minero Andino</h3>
-                                <p>Mantenimiento preventivo integral</p>
-                            </div>
-                        </Link>
+                        )}
                     </div>
                     <div className="text-center mt-48 reveal">
                         <Link to="/proyectos" className="btn-outline-dark">
