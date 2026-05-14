@@ -26,7 +26,7 @@ const Nosotros = () => {
                     <div className="about-grid">
                         <div className="about-image reveal-left">
                             <img
-                                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80"
+                                src="/img/hero/IMG_1540.webp"
                                 alt="Corporación AKN"
                             />
                             <div className="about-image-badge">10 años<br />de experiencia</div>

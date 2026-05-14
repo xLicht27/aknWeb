@@ -7,7 +7,7 @@ const EficienciaEnergetica = () => {
       title="Eficiencia <span>Energética</span>"
       subtitle="Optimización y energías renovables"
       description="Ahorre costos operativos y reduzca su huella de carbono mediante la implementación de soluciones energéticas modernas y optimización tarifaria."
-      image="/img/placeholder.jpg"
+      image="/img/hero/IMG_6009.webp"
       highlights={[
         {
           title: "Energías Renovables",

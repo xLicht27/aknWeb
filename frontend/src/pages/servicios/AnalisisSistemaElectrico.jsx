@@ -8,7 +8,7 @@ const AnalisisSistemaElectrico = () => {
       title="Análisis del <span>Sistema Eléctrico</span>"
       subtitle="Diagnóstico y corrección de fallas"
       description="Evaluamos a profundidad el estado de su sistema eléctrico para prevenir paradas inesperadas y optimizar el consumo de energía en sus instalaciones."
-      image="/img/placeholder.jpg"
+      image="/img/hero/IMG_6014.webp"
       highlights={[
         {
           title: "Diagnóstico y Reparación",

@@ -206,7 +206,7 @@ const Home = () => {
                 <div className="container">
                     <div className="about-grid">
                         <div className="about-image reveal-left">
-                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Corporación AKN - Ingeniería" />
+                            <img src="/img/hero/IMG_0465.webp" alt="Corporación AKN - Ingeniería" />
                             <div className="about-image-badge">10 años<br />de experiencia</div>
                         </div>
                         <div className="about-text reveal-right">
@@ -278,7 +278,7 @@ const Home = () => {
                     </div>
                     <div className="projects-grid reveal-stagger">
                         <Link to="/proyectos" className="project-card">
-                            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80" alt="Proyecto Industrial" />
+                            <img src="/img/hero/IMG_0468.webp" alt="Proyecto Industrial" />
                             <div className="project-overlay">
                                 <span className="tag">Instalación Eléctrica</span>
                                 <h3>Planta Industrial del Sur</h3>
@@ -286,7 +286,7 @@ const Home = () => {
                             </div>
                         </Link>
                         <Link to="/proyectos" className="project-card">
-                            <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&q=80" alt="Centro Comercial" />
+                            <img src="/img/hero/IMG_0898.webp" alt="Centro Comercial" />
                             <div className="project-overlay">
                                 <span className="tag">Grupos Electrógenos</span>
                                 <h3>Centro Comercial Metropolitano</h3>
@@ -294,7 +294,7 @@ const Home = () => {
                             </div>
                         </Link>
                         <Link to="/proyectos" className="project-card">
-                            <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=600&q=80" alt="Complejo Minero" />
+                            <img src="/img/hero/IMG_1434.webp" alt="Complejo Minero" />
                             <div className="project-overlay">
                                 <span className="tag">Mantenimiento</span>
                                 <h3>Complejo Minero Andino</h3>

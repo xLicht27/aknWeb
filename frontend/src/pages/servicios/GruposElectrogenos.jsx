@@ -7,7 +7,7 @@ const GruposElectrogenos = () => {
       title="Grupos <span>Electrógenos</span>"
       subtitle="Respaldo de energía ininterrumpida"
       description="Ofrecemos suministro, instalación y un plan completo de mantenimiento para sus grupos electrógenos, asegurando la energía en el momento que más la necesita."
-      image="/img/placeholder.jpg"
+      image="/img/hero/IMG_5833.webp"
       highlights={[
         {
           title: "Servicios Principales",

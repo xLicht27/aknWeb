@@ -7,7 +7,7 @@ const SistemaMediaTension = () => {
       title="Sistema de <span>Media Tensión</span>"
       subtitle="Proyectos y mantenimiento en media tensión"
       description="Ejecución de proyectos de impacto, montajes y mantenimiento preventivo-correctivo de subestaciones eléctricas, con personal calificado."
-      image="/img/placeholder.jpg"
+      image="/img/hero/IMG_2177.webp"
       highlights={[
         {
           title: "Gestión de Proyectos",

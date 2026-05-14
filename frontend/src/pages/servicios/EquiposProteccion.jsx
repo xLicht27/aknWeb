@@ -7,7 +7,7 @@ const EquiposProteccion = () => {
       title="Equipos de <span>Protección</span>"
       subtitle="Instalación y mantenimiento especializado"
       description="Proteja sus equipos más sensibles contra picos de voltaje e inestabilidades de la red mediante equipos de protección eficientes y comprobados."
-      image="/img/placeholder.jpg"
+      image="/img/hero/IMG_5995.webp"
       highlights={[
         {
           title: "Sistemas de Protección",

@@ -18,14 +18,14 @@
     position: absolute;
     inset: 0;
     z-index: 2;
-    background: linear-gradient(135deg, rgba(11, 11, 11, 0.92), rgba(0, 0, 0, 0.85));
+    background: linear-gradient(135deg, rgba(11, 11, 11, 0.72), rgba(0, 0, 0, 0.65));
 }
 
 .hero-bg {
     position: absolute;
     inset: 0;
     z-index: 0;
-    background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80') center/cover;
+    background: url('/img/hero/IMG_2177.webp') center/cover;
 }
 
 .hero-content {

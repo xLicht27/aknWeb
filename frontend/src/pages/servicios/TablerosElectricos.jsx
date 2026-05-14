@@ -7,7 +7,7 @@ const TablerosElectricos = () => {
       title="Tableros <span>Eléctricos</span>"
       subtitle="Instalación y mantenimiento especializado"
       description="Brindamos soluciones integrales para la instalación y mantenimiento de tableros eléctricos en diversos sectores, asegurando la continuidad del servicio y la protección de su infraestructura."
-      image="/img/placeholder.jpg"
+      image="/img/hero/IMG_1558.webp"
       highlights={[
         {
           title: "Sectores de Aplicación",
