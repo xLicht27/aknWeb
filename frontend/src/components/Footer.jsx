@@ -16,7 +16,7 @@ export default function Footer() {
                             la infraestructura que mueve al país.
                         </p>
                         <div className="footer-social">
-                            <a href="#" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/in/kevin-jorges-ramos-9b60a23b/" target="_blank" rel="noopener noreferrer">
                                 <i className="fab fa-linkedin-in"></i>
                             </a>
                             <a href="#" target="_blank" rel="noopener noreferrer">
@@ -24,9 +24,6 @@ export default function Footer() {
                             </a>
                             <a href="#" target="_blank" rel="noopener noreferrer">
                                 <i className="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer">
-                                <i className="fab fa-youtube"></i>
                             </a>
                         </div>
                     </div>
@@ -51,10 +48,14 @@ export default function Footer() {
 
                     <div className="footer-col">
                         <h4>Contacto</h4>
-                        <Link to="/contacto">
+                        <div style={{ marginBottom: '10px', fontSize: '0.9rem', color: 'var(--text-gray)' }}>
                             <i className="fas fa-map-marker-alt" style={{ marginRight: '6px', color: 'var(--primary)' }}></i>
-                            Lima, Perú
-                        </Link>
+                            Av. Enrique Meiggs 2692 Lima
+                        </div>
+                        <div style={{ marginBottom: '10px', fontSize: '0.9rem', color: 'var(--text-gray)' }}>
+                            <i className="fas fa-map-marker-alt" style={{ marginRight: '6px', color: 'var(--primary)' }}></i>
+                            Jr. Crespo y Castillo 2229 Lima
+                        </div>
                         <a href="tel:+5114513488">
                             <i className="fas fa-phone-alt" style={{ marginRight: '6px', color: 'var(--primary)' }}></i>
                             (01) 4513488

@@ -6,14 +6,14 @@ import '../css/global.css';
 import '../css/responsive.css';
 
 const SERVICIOS = [
-  'Grupos Electrógenos',
   'Tableros Eléctricos',
-  'Cableado Industrial',
-  'Mantenimiento Preventivo',
-  'Mantenimiento Correctivo',
-  'Instalaciones Eléctricas',
-  'Energía Renovable',
-  'Ingeniería de Proyectos',
+  'Análisis del Sistema Eléctrico',
+  'Grupos Electrógenos',
+  'Equipos de Protección',
+  'Sistema de Media Tensión',
+  'Eficiencia Energética',
+  'Redes Contra Incendios',
+  'Sistemas de Bombeo',
 ];
 
 const Contacto = () => {
@@ -78,8 +78,9 @@ const Contacto = () => {
               <div className="contact-item">
                 <div className="contact-item-icon"><i className="fas fa-map-marker-alt"></i></div>
                 <div className="contact-item-text">
-                  <h4>Oficina Principal</h4>
-                  <p>Lima, Perú</p>
+                  <h4>Oficinas</h4>
+                  <p><strong>Oficina 1:</strong> Av. Enrique Meiggs 2692 Lima, 15081, Perú</p>
+                  <p style={{ marginTop: '8px' }}><strong>Oficina 2:</strong> Jirón Crespo y Castillo N°2229 - Urbanización Mirones Bajo, Lima</p>
                 </div>
               </div>
 
@@ -121,7 +122,7 @@ const Contacto = () => {
 
               <div className="contact-map">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.6508210373!2d-77.0326!3d-12.0464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDAyJzQ3LjAiUyA3N8KwMDEnNTcuNCJX!5e0!3m2!1ses!2spe!4v1620000000000"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.8152431417534!2d-77.067306!3d-12.04533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ca23766a5673%3A0xc47b975d50694002!2sAv.%20Enrique%20Meiggs%202692%2C%20Cercado%20de%20Lima%2015081!5e0!3m2!1ses-419!2spe!4v1715655000000!5m2!1ses-419!2spe"
                   allowFullScreen=""
                   loading="lazy"
                   title="Ubicación AKN"

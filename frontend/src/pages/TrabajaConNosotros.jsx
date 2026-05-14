@@ -75,11 +75,8 @@ const TrabajaConNosotros = () => {
               </p>
               
               <div className="job-portals">
-                <a href="https://www.linkedin.com/company/corporacion-akn/" target="_blank" rel="noopener noreferrer" className="btn-portal btn-linkedin">
-                  <i className="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://pe.computrabajo.com/" target="_blank" rel="noopener noreferrer" className="btn-portal btn-computrabajo">
-                  <i className="fas fa-briefcase"></i> CompuTrabajo
+                <a href="https://www.linkedin.com/in/kevin-jorges-ramos-9b60a23b/" target="_blank" rel="noopener noreferrer" className="btn-portal btn-linkedin">
+                  <i className="fab fa-linkedin"></i> LinkedIn Oficial
                 </a>
               </div>
             </div>

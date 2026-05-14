@@ -1,0 +1,48 @@
+/* ---------- Ghost Post Content Typography ---------- */
+.post-content {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-body);
+}
+
+.post-content h2, 
+.post-content h3, 
+.post-content h4 {
+    color: var(--secondary);
+    margin: 2em 0 1em;
+    font-weight: 700;
+}
+
+.post-content h2 { font-size: 1.8rem; }
+.post-content h3 { font-size: 1.4rem; }
+
+.post-content p {
+    margin-bottom: 1.5em;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 2em auto;
+    display: block;
+}
+
+.post-content ul, 
+.post-content ol {
+    margin-bottom: 1.5em;
+    padding-left: 2em;
+}
+
+.post-content li {
+    margin-bottom: 0.5em;
+}
+
+.post-content a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.post-content a:hover {
+    color: var(--primary-dark);
+}

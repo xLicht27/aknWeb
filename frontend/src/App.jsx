@@ -5,8 +5,10 @@ import Home from './pages/Home';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Noticias from './pages/Noticias';
+import NoticiaDetalle from './pages/NoticiaDetalle';
 import Nosotros from './pages/Nosotros';
 import Proyectos from './pages/Proyectos';
+import ProyectoDetalle from './pages/ProyectoDetalle';
 import TrabajaConNosotros from './pages/TrabajaConNosotros';
 import Contacto from './pages/Contacto';
 import Reclamaciones from './pages/Reclamaciones';
@@ -39,7 +41,9 @@ export default function App() {
           <Route path="/servicios/sistemas-de-bombeo" element={<SistemasBombeo />} />
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/proyectos" element={<Proyectos />} />
+          <Route path="/proyectos/:slug" element={<ProyectoDetalle />} />
           <Route path="/noticias" element={<Noticias />} />
+          <Route path="/noticias/:slug" element={<NoticiaDetalle />} />
           <Route path="/trabajaconnosotros" element={<TrabajaConNosotros />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/reclamaciones" element={<Reclamaciones />} />
