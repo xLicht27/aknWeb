@@ -9,7 +9,7 @@ export default function Footer() {
                 <div className="footer-grid">
                     <div className="footer-brand">
                         <div className="nav-logo" style={{ marginBottom: '4px' }}>
-                            <img src='../public/img/logo.png' className='nav-logo-icon' href='/'></img>
+                            <img src='/img/logo.png' className='nav-logo-icon' alt='Logo' />
                         </div>
                         <p>
                             Liderazgo global en soluciones eléctricas. Más de 10 años construyendo

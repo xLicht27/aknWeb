@@ -348,8 +348,8 @@ const Home = () => {
                     <div className="section-label">Confían en Nosotros</div>
                     <h2 className="section-title">Nuestros Clientes</h2>
                 </div>
-                <div class="clients-marquee-wrap">
-                    <div class="clients-track row-1">
+                <div className="clients-marquee-wrap">
+                    <div className="clients-track row-1">
                         <img className='client-logo' src='img/clientes/grupo-eulen.png' alt='grupo-eulen'></img>
                         <img className='client-logo' src='img/clientes/UPC.png' alt='UPC'></img>
                         <img className='client-logo' src='img/clientes/mall-aventura.png' alt='mall-aventura'></img>
@@ -372,7 +372,7 @@ const Home = () => {
                         <img className='client-logo' src='img/clientes/latam.svg' alt='latam'></img>
                         <img className='client-logo' src='img/clientes/air-europa.svg' alt='air-europa'></img>
                     </div>
-                    <div class="clients-track row-2">
+                    <div className="clients-track row-2">
                         <img className='client-logo' src='img/clientes/cae.svg' alt='cae'></img>
                         <img className='client-logo' src='img/clientes/cibertec.png' alt='cibertec'></img>
                         <img className='client-logo' src='img/clientes/intcomex.jpeg' alt='Intcomex'></img>

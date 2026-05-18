@@ -51,12 +51,17 @@ app.use((req, res) => {
 // ─── Manejador global de errores ─────────────────────────────────
 app.use(require('./middleware/errorHandler'));
 
-// ─── Iniciar servidor ─────────────────────────────────────────────
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log('\n🚀 ================================');
-  console.log(`   API Corporación AKN`);
-  console.log(`   http://localhost:${PORT}`);
-  console.log(`   Entorno: ${process.env.NODE_ENV}`);
-  console.log('🚀 ================================\n');
-});
+// ─── Iniciar servidor o Exportar para Serverless ──────────────────
+module.exports = app;
+
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  const PORT = process.env.PORT || 4000;
+  app.listen(PORT, () => {
+    console.log('\n🚀 ================================');
+    console.log(`   API Corporación AKN`);
+    console.log(`   http://localhost:${PORT}`);
+    console.log(`   Entorno: ${process.env.NODE_ENV}`);
+    console.log('🚀 ================================\n');
+  });
+}
+

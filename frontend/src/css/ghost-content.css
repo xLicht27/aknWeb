@@ -3,6 +3,8 @@
     font-size: 1.05rem;
     line-height: 1.8;
     color: var(--text-body);
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .post-content h2, 
@@ -45,4 +47,11 @@
 
 .post-content a:hover {
     color: var(--primary-dark);
+}
+
+.post-content iframe,
+.post-content table,
+.post-content figure {
+    max-width: 100%;
+    overflow-x: auto;
 }

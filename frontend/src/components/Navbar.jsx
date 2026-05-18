@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../css/navbar.css';
 
 export default function Navbar() {
@@ -7,6 +7,7 @@ export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const location = useLocation();
+    const navigate = useNavigate();
 
     // Cerrar menús al cambiar de ruta
     useEffect(() => {
@@ -34,7 +35,7 @@ export default function Navbar() {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
             <div className="container">
                 <Link to="/" className="nav-logo" onClick={closeMenu}>
-                    <img src='../public/img/logo.png' className='nav-logo-icon' alt="Logo"></img>
+                    <img src="/img/logo.png" className="nav-logo-icon" alt="Logo" />
                 </Link>
 
                 <div className={`nav-links ${mobileMenuOpen ? 'open' : ''}`} id="navLinks">
