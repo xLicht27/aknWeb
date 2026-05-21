@@ -11,6 +11,15 @@ import '../css/responsive.css'
 const Home = () => {
     const [proyectosDestacados, setProyectosDestacados] = useState([]);
     const [loadingProyectos, setLoadingProyectos] = useState(true);
+    const [aboutImgIndex, setAboutImgIndex] = useState(0);
+    const aboutImages = ['/img/hero/IMG_0465.webp', '/img/hero/IMG_0468.webp', '/img/hero/IMG_0898.webp', '/img/hero/IMG_1434.webp'];
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setAboutImgIndex((prev) => (prev + 1) % aboutImages.length);
+        }, 3000);
+        return () => clearInterval(timer);
+    }, []);
 
     useEffect(() => {
         const fetchProyectos = async () => {
@@ -146,8 +155,8 @@ const Home = () => {
                             <span className="highlight">Soluciones Eléctricas</span>
                         </h1>
                         <p className="hero-desc">
-                            Especialistas en instalación de grupos electrógenos, cableado industrial, tableros
-                            eléctricos y mantenimiento preventivo para grandes infraestructuras.
+                            Especialistas en mantenimiento eléctrico industrial, subestaciones,
+                            tableros eléctricos y continuidad operativa para empresas e infraestructura crítica.
                         </p>
                         <div className="hero-buttons">
                             <Link to="/servicios/tableros-electricos" className="btn-primary">
@@ -170,15 +179,15 @@ const Home = () => {
                             <div className="counter-label">Años de Experiencia</div>
                         </div>
                         <div className="counter-item reveal">
-                            <div className="counter-number"><span data-target="350">0</span>+</div>
+                            <div className="counter-number"><span data-target="1000">0</span>+</div>
                             <div className="counter-label">Proyectos Entregados</div>
                         </div>
                         <div className="counter-item reveal">
-                            <div className="counter-number"><span data-target="120">0</span>+</div>
+                            <div className="counter-number"><span data-target="50">0</span>+</div>
                             <div className="counter-label">Clientes Satisfechos</div>
                         </div>
                         <div className="counter-item reveal">
-                            <div className="counter-number"><span data-target="80">0</span>+</div>
+                            <div className="counter-number"><span data-target="500">0</span>+</div>
                             <div className="counter-label">Profesionales</div>
                         </div>
                     </div>
@@ -196,28 +205,28 @@ const Home = () => {
                         </p>
                     </div>
                     <div className="services-grid reveal-stagger">
-                        <Link to="/servicios/grupos-electrogenos" className="service-card">
-                            <div className="service-icon"><i className="fas fa-charging-station"></i></div>
-                            <h3>Grupos Electrógenos</h3>
-                            <p>Venta, instalación, sincronismo y mantenimiento de grupos electrógenos de alta potencia.</p>
-                            <span className="learn-more">Más información <i className="fas fa-arrow-right"></i></span>
-                        </Link>
                         <Link to="/servicios/tableros-electricos" className="service-card">
                             <div className="service-icon"><i className="fas fa-project-diagram"></i></div>
                             <h3>Tableros Eléctricos</h3>
-                            <p>Diseño, fabricación y montaje de tableros de distribución, control y automatización.</p>
+                            <p>Diseño, fabricación y mantenimiento de tableros eléctricos para aplicaciones industriales.</p>
                             <span className="learn-more">Más información <i className="fas fa-arrow-right"></i></span>
                         </Link>
                         <Link to="/servicios/sistema-de-media-tension" className="service-card">
                             <div className="service-icon"><i className="fas fa-network-wired"></i></div>
-                            <h3>Cableado Industrial</h3>
-                            <p>Instalación de bandejas portacables, ductería y tendido de conductores de gran sección.</p>
+                            <h3>Media y Baja Tensión</h3>
+                            <p>Implementación y mantenimiento de sistemas eléctricos en media y baja tensión.</p>
                             <span className="learn-more">Más información <i className="fas fa-arrow-right"></i></span>
                         </Link>
                         <Link to="/servicios/analisis-sistema-electrico" className="service-card">
                             <div className="service-icon"><i className="fas fa-wrench"></i></div>
-                            <h3>Mantenimiento Preventivo</h3>
-                            <p>Planes programados para garantizar la continuidad operativa de sus sistemas eléctricos.</p>
+                            <h3>Mantenimiento Eléctrico</h3>
+                            <p>Servicios preventivos y correctivos para garantizar continuidad y seguridad operativa.</p>
+                            <span className="learn-more">Más información <i className="fas fa-arrow-right"></i></span>
+                        </Link>
+                        <Link to="/servicios/grupos-electrogenos" className="service-card">
+                            <div className="service-icon"><i className="fas fa-charging-station"></i></div>
+                            <h3>Infraestructura Eléctrica</h3>
+                            <p>Instalaciones eléctricas industriales, canalización, bandejas y distribución de energía.</p>
                             <span className="learn-more">Más información <i className="fas fa-arrow-right"></i></span>
                         </Link>
                     </div>
@@ -233,26 +242,42 @@ const Home = () => {
             <section className="about section-padding">
                 <div className="container">
                     <div className="about-grid">
-                        <div className="about-image reveal-left">
-                            <img src="/img/hero/IMG_0465.webp" alt="Corporación AKN - Ingeniería" />
-                            <div className="about-image-badge">10 años<br />de experiencia</div>
+                        <div className="about-image reveal-left" style={{ position: 'relative', height: '450px', overflow: 'hidden' }}>
+                            {aboutImages.map((imgSrc, index) => (
+                                <img
+                                    key={index}
+                                    src={imgSrc}
+                                    style={{
+                                        position: 'absolute',
+                                        top: 0,
+                                        left: 0,
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover',
+                                        opacity: index === aboutImgIndex ? 1 : 0,
+                                        transform: index === aboutImgIndex ? 'scale(1)' : 'scale(1.08)',
+                                        transition: 'opacity 1.2s ease-in-out, transform 1.5s ease-in-out',
+                                        zIndex: index === aboutImgIndex ? 2 : 1
+                                    }}
+                                    alt="Corporación AKN - Ingeniería"
+                                />
+                            ))}
+                            <div className="about-image-badge" style={{ zIndex: 10 }}>10 años<br />de experiencia</div>
                         </div>
                         <div className="about-text reveal-right">
                             <h3>Sobre Nosotros</h3>
                             <h2>Excelencia en Ingeniería Eléctrica e Industrial</h2>
                             <p>
-                                Corporación AKN es una empresa líder en ingeniería y mantenimiento, dedicada a brindar soluciones
-                                integrales para proyectos industriales, comerciales y de construcción civil a nivel nacional.
+                                Corporación AKN es una empresa especializada en ingeniería y mantenimiento eléctrico, enfocada en brindar soluciones integrales para proyectos industriales, comerciales e infraestructura crítica.
                             </p>
                             <p>
-                                Nos especializamos en ser el brazo técnico de confianza para empresas que requieren
-                                infraestructura eléctrica de alto nivel.
+                                Nos convertimos en el aliado técnico estratégico de empresas que requieren infraestructura eléctrica confiable, segura y de alto desempeño.
                             </p>
                             <div className="about-features">
-                                <div className="about-feature"><i className="fas fa-handshake"></i><span>Confianza</span></div>
-                                <div className="about-feature"><i className="fas fa-people-arrows"></i><span>Cooperación</span></div>
-                                <div className="about-feature"><i className="fas fa-check-circle"></i><span>Calidad</span></div>
-                                <div className="about-feature"><i className="fas fa-leaf"></i><span>Sostenibilidad</span></div>
+                                <div className="about-feature"><i className="fas fa-cogs"></i><span>Ingeniería</span></div>
+                                <div className="about-feature"><i className="fas fa-shield-alt"></i><span>Seguridad</span></div>
+                                <div className="about-feature"><i className="fas fa-check-circle"></i><span>Confiabilidad</span></div>
+                                <div className="about-feature"><i className="fas fa-award"></i><span>Calidad</span></div>
                             </div>
                             <div className="mt-28">
                                 <Link to="/nosotros" className="btn-outline-dark">
@@ -273,24 +298,24 @@ const Home = () => {
                     </div>
                     <div className="values-grid reveal-stagger">
                         <div className="value-item">
-                            <div className="value-icon"><i className="fas fa-handshake"></i></div>
-                            <h4>Confianza</h4>
-                            <p>Relaciones sólidas basadas en transparencia y cumplimiento</p>
+                            <div className="value-icon"><i className="fas fa-cogs"></i></div>
+                            <h4>Ingeniería</h4>
+                            <p>Soluciones diseñadas con criterio técnico y enfoque en continuidad operativa.</p>
                         </div>
                         <div className="value-item">
-                            <div className="value-icon"><i className="fas fa-people-carry"></i></div>
-                            <h4>Cooperación</h4>
-                            <p>Trabajó en equipo con nuestros clientes y socios estratégicos</p>
+                            <div className="value-icon"><i className="fas fa-shield-alt"></i></div>
+                            <h4>Seguridad</h4>
+                            <p>Procesos seguros orientados a proteger personas, equipos e infraestructura.</p>
+                        </div>
+                        <div className="value-item">
+                            <div className="value-icon"><i className="fas fa-check-circle"></i></div>
+                            <h4>Confiabilidad</h4>
+                            <p>Respuesta técnica eficiente para operaciones críticas y sistemas eléctricos industriales.</p>
                         </div>
                         <div className="value-item">
                             <div className="value-icon"><i className="fas fa-award"></i></div>
                             <h4>Calidad</h4>
-                            <p>Estándares internacionales en cada proyecto que ejecutamos</p>
-                        </div>
-                        <div className="value-item">
-                            <div className="value-icon"><i className="fas fa-seedling"></i></div>
-                            <h4>Sostenibilidad</h4>
-                            <p>Compromiso con el medio ambiente y el desarrollo responsable</p>
+                            <p>Servicios ejecutados bajo altos estándares técnicos y operativos.</p>
                         </div>
                     </div>
                 </div>

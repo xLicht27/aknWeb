@@ -12,8 +12,7 @@ export default function Footer() {
                             <img src='/img/logo.png' className='nav-logo-icon' alt='Logo' />
                         </div>
                         <p>
-                            Liderazgo global en soluciones eléctricas. Más de 10 años construyendo
-                            la infraestructura que mueve al país.
+                            Más de 10 años desarrollando soluciones eléctricas para infraestructura industrial.
                         </p>
                         <div className="footer-social">
                             <a href="https://www.linkedin.com/in/kevin-jorges-ramos-9b60a23b/" target="_blank" rel="noopener noreferrer">
@@ -30,11 +29,10 @@ export default function Footer() {
 
                     <div className="footer-col">
                         <h4>Servicios</h4>
-                        <Link to="/servicios/grupos-electrogenos">Grupos Electrógenos</Link>
                         <Link to="/servicios/tableros-electricos">Tableros Eléctricos</Link>
-                        <Link to="/servicios/analisis-sistema-electrico">Análisis de Sistema</Link>
-                        <Link to="/servicios/eficiencia-energetica">Eficiencia Energética</Link>
-                        <Link to="/servicios/sistema-de-media-tension">Media Tensión</Link>
+                        <Link to="/servicios/sistema-de-media-tension">Media y Baja Tensión</Link>
+                        <Link to="/servicios/analisis-sistema-electrico">Mantenimiento Eléctrico</Link>
+                        <Link to="/servicios/grupos-electrogenos">Infraestructura Eléctrica</Link>
                     </div>
 
                     <div className="footer-col">
@@ -50,15 +48,15 @@ export default function Footer() {
                         <h4>Contacto</h4>
                         <div style={{ marginBottom: '10px', fontSize: '0.9rem', color: 'var(--text-gray)' }}>
                             <i className="fas fa-map-marker-alt" style={{ marginRight: '6px', color: 'var(--primary)' }}></i>
-                            Av. Enrique Meiggs 2692 Lima
+                            Oficina principal Av. Enrique Meiggs
                         </div>
                         <div style={{ marginBottom: '10px', fontSize: '0.9rem', color: 'var(--text-gray)' }}>
                             <i className="fas fa-map-marker-alt" style={{ marginRight: '6px', color: 'var(--primary)' }}></i>
-                            Jr. Crespo y Castillo 2229 Lima
+                            Oficina técnica Jr. Crespo y castillo
                         </div>
-                        <a href="tel:+5114513488">
+                        <a href="tel:+51993024474">
                             <i className="fas fa-phone-alt" style={{ marginRight: '6px', color: 'var(--primary)' }}></i>
-                            (01) 4513488
+                            (01) 993024474
                         </a>
                         <a href="mailto:ventas@corporacionakn.com">
                             <i className="fas fa-envelope" style={{ marginRight: '6px', color: 'var(--primary)' }}></i>

@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/nosotros.css';
 import '../css/global.css';
 import '../css/responsive.css';
 
 const Nosotros = () => {
+    const [aboutImgIndex, setAboutImgIndex] = useState(0);
+    const aboutImages = ['/img/hero/IMG_1540.webp', '/img/hero/IMG_1549.webp', '/img/hero/IMG_1558.webp', '/img/hero/IMG_1576.webp'];
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setAboutImgIndex((prev) => (prev + 1) % aboutImages.length);
+        }, 3000);
+        return () => clearInterval(timer);
+    }, []);
+
     return (
         <div className="nosotros-page">
             {/* PAGE HEADER */}
@@ -24,12 +34,27 @@ const Nosotros = () => {
             <section className="about section-padding">
                 <div className="container">
                     <div className="about-grid">
-                        <div className="about-image reveal-left">
-                            <img
-                                src="/img/hero/IMG_1540.webp"
-                                alt="Corporación AKN"
-                            />
-                            <div className="about-image-badge">10 años<br />de experiencia</div>
+                        <div className="about-image reveal-left" style={{ position: 'relative', height: '450px', overflow: 'hidden' }}>
+                            {aboutImages.map((imgSrc, index) => (
+                                <img
+                                    key={index}
+                                    src={imgSrc}
+                                    style={{
+                                        position: 'absolute',
+                                        top: 0,
+                                        left: 0,
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover',
+                                        opacity: index === aboutImgIndex ? 1 : 0,
+                                        transform: index === aboutImgIndex ? 'scale(1)' : 'scale(1.08)',
+                                        transition: 'opacity 1.2s ease-in-out, transform 1.5s ease-in-out',
+                                        zIndex: index === aboutImgIndex ? 2 : 1
+                                    }}
+                                    alt="Corporación AKN"
+                                />
+                            ))}
+                            <div className="about-image-badge" style={{ zIndex: 10 }}>10 años<br />de experiencia</div>
                         </div>
                         <div className="about-text reveal-right">
                             <h3>Nuestra Historia</h3>
@@ -63,34 +88,34 @@ const Nosotros = () => {
                     <div className="max-w-700 mx-auto">
                         <div className="timeline reveal">
                             <div className="timeline-item">
-                                <span className="year">2010</span>
-                                <h4>Fundación de Corporación AKN</h4>
-                                <p>Inicio de operaciones enfocados en instalaciones eléctricas residenciales e industriales en Lima.</p>
-                            </div>
-                            <div className="timeline-item">
-                                <span className="year">2013</span>
-                                <h4>Expansión a proyectos comerciales</h4>
-                                <p>Primeros contratos con centros comerciales y edificios corporativos de gran envergadura.</p>
-                            </div>
-                            <div className="timeline-item">
                                 <span className="year">2016</span>
-                                <h4>Certificación ISO 9001:2015</h4>
-                                <p>Obtención de la certificación internacional de calidad, consolidando nuestros procesos operativos.</p>
+                                <h4>Inicio de operaciones de Corporación AKN</h4>
+                                <p>Comenzamos brindando servicios eléctricos especializados en Lima Metropolitana.</p>
                             </div>
                             <div className="timeline-item">
                                 <span className="year">2018</span>
-                                <h4>Alianzas con corporaciones internacionales</h4>
-                                <p>Inicio de relaciones comerciales con Toyota, Air Canada, LATAM Airlines, Air Europa y CAE.</p>
+                                <h4>Expansión a proyectos corporativos</h4>
+                                <p>Iniciamos atención a empresas, centros comerciales e infraestructura industrial.</p>
                             </div>
                             <div className="timeline-item">
-                                <span className="year">2021</span>
-                                <h4>División de energía renovable</h4>
-                                <p>Lanzamiento de nuestra línea de servicios en energía solar e instalaciones fotovoltaicas.</p>
+                                <span className="year">2020</span>
+                                <h4>Desarrollo de servicios en Media Tensión</h4>
+                                <p>Ampliamos nuestras capacidades en subestaciones y sistemas eléctricos críticos.</p>
+                            </div>
+                            <div className="timeline-item">
+                                <span className="year">2022</span>
+                                <h4>Ingreso al sector aeroportuario</h4>
+                                <p>Participación en proyectos y mantenimientos para operaciones aeroportuarias y aeronáuticas.</p>
                             </div>
                             <div className="timeline-item">
                                 <span className="year">2024</span>
-                                <h4>Más de 350 proyectos completados</h4>
-                                <p>Hito de 350 proyectos entregados exitosamente con más de 120 clientes activos a nivel nacional.</p>
+                                <h4>Expansión de operaciones a nivel nacional</h4>
+                                <p>Ejecución de servicios técnicos en distintas regiones del país.</p>
+                            </div>
+                            <div className="timeline-item">
+                                <span className="year">2026</span>
+                                <h4>Consolidación en infraestructura eléctrica industrial</h4>
+                                <p>Fortalecimiento de nuestras líneas de mantenimiento, tableros eléctricos y continuidad operativa.</p>
                             </div>
                         </div>
                     </div>
@@ -118,7 +143,7 @@ const Nosotros = () => {
                         <div className="culture-card reveal">
                             <div className="culture-card-icon"><i className="fas fa-gem"></i></div>
                             <h3>Valores</h3>
-                            <p>Confianza, cooperación, calidad y sostenibilidad. Estos pilares fundamentales guían cada decisión y cada proyecto que ejecutamos como corporación.</p>
+                            <p>Ingeniería, seguridad, confiabilidad y calidad. Estos pilares fundamentales guían cada decisión y cada proyecto que ejecutamos como corporación.</p>
                         </div>
                     </div>
                 </div>
@@ -133,24 +158,24 @@ const Nosotros = () => {
                     </div>
                     <div className="values-grid reveal-stagger">
                         <div className="value-item">
-                            <div className="value-icon"><i className="fas fa-handshake"></i></div>
-                            <h4>Confianza</h4>
-                            <p>Relaciones sólidas basadas en transparencia y cumplimiento de compromisos</p>
+                            <div className="value-icon"><i className="fas fa-cogs"></i></div>
+                            <h4>Ingeniería</h4>
+                            <p>Soluciones diseñadas con criterio técnico y enfoque en continuidad operativa.</p>
                         </div>
                         <div className="value-item">
-                            <div className="value-icon"><i className="fas fa-people-carry"></i></div>
-                            <h4>Cooperación</h4>
-                            <p>Trabajó en equipo con clientes y socios estratégicos para resultados óptimos</p>
+                            <div className="value-icon"><i className="fas fa-shield-alt"></i></div>
+                            <h4>Seguridad</h4>
+                            <p>Procesos seguros orientados a proteger personas, equipos e infraestructura.</p>
+                        </div>
+                        <div className="value-item">
+                            <div className="value-icon"><i className="fas fa-check-circle"></i></div>
+                            <h4>Confiabilidad</h4>
+                            <p>Respuesta técnica eficiente para operaciones críticas y sistemas eléctricos industriales.</p>
                         </div>
                         <div className="value-item">
                             <div className="value-icon"><i className="fas fa-award"></i></div>
                             <h4>Calidad</h4>
-                            <p>Estándares internacionales en cada proyecto que ejecutamos sin excepción</p>
-                        </div>
-                        <div className="value-item">
-                            <div className="value-icon"><i className="fas fa-seedling"></i></div>
-                            <h4>Sostenibilidad</h4>
-                            <p>Compromiso con el medio ambiente y el desarrollo responsable del país</p>
+                            <p>Servicios ejecutados bajo altos estándares técnicos y operativos.</p>
                         </div>
                     </div>
                 </div>

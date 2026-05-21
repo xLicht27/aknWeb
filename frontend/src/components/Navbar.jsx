@@ -50,10 +50,10 @@ export default function Navbar() {
                         </div>
                         <div className={`nav-dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
                             <Link to="/servicios/tableros-electricos" onClick={closeMenu}>Tableros Eléctricos</Link>
-                            <Link to="/servicios/analisis-sistema-electrico" onClick={closeMenu}>Análisis del Sistema Eléctrico</Link>
-                            <Link to="/servicios/grupos-electrogenos" onClick={closeMenu}>Grupos Electrógenos</Link>
+                            <Link to="/servicios/sistema-de-media-tension" onClick={closeMenu}>Media y Baja Tensión</Link>
+                            <Link to="/servicios/analisis-sistema-electrico" onClick={closeMenu}>Mantenimiento Eléctrico</Link>
+                            <Link to="/servicios/grupos-electrogenos" onClick={closeMenu}>Infraestructura Eléctrica</Link>
                             <Link to="/servicios/equipos-de-proteccion" onClick={closeMenu}>Equipos de Protección</Link>
-                            <Link to="/servicios/sistema-de-media-tension" onClick={closeMenu}>Sistema de Media Tensión</Link>
                             <Link to="/servicios/eficiencia-energetica" onClick={closeMenu}>Eficiencia Energética</Link>
                             <Link to="/servicios/redes-contra-incendios" onClick={closeMenu}>Redes Contra Incendios</Link>
                             <Link to="/servicios/sistemas-de-bombeo" onClick={closeMenu}>Sistemas de Bombeo</Link>
