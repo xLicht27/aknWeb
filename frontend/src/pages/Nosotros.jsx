@@ -6,7 +6,7 @@ import '../css/responsive.css';
 
 const Nosotros = () => {
     const [aboutImgIndex, setAboutImgIndex] = useState(0);
-    const aboutImages = ['/img/hero/IMG_1540.webp', '/img/hero/IMG_1549.webp', '/img/hero/IMG_1558.webp', '/img/hero/IMG_1576.webp'];
+    const aboutImages = ['/img/hero/IMG_6014.webp', '/img/hero/IMG_4624.webp', '/img/hero/IMG_0898.webp', '/img/hero/IMG_5833.webp'];
 
     useEffect(() => {
         const timer = setInterval(() => {
