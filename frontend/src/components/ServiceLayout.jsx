@@ -12,9 +12,9 @@ const ServiceLayout = ({ title, subtitle, description, points = [], images = [],
   }
 
   // Distribute the images across the layout
-  const heroImage = finalImages[0] || null;
-  const sectionImage = finalImages[1] || null;
-  const extraImages = finalImages.slice(2);
+  const heroImage = finalImages[0] || 'IMG_1540.webp';
+  const sectionImage = finalImages[1] || 'IMG_6014.webp';
+  const extraImages = finalImages.length > 2 ? finalImages.slice(2) : [];
 
   return (
     <div className="service-page-container">
@@ -88,18 +88,17 @@ const ServiceLayout = ({ title, subtitle, description, points = [], images = [],
           </div>
         )}
 
-        {/* Asymmetric Alternating Extra Section with Image 2 */}
+        {/* Compromiso de Calidad AKN Section - Image is ALWAYS displayed */}
         <div className="asymmetric-extra-section reveal">
-          {sectionImage && (
-            <div className="featured-image-container">
-              <img 
-                src={`/img/hero/${sectionImage}`} 
-                alt={`Detalle de trabajo - ${title ? title.replace(/<span>|<\/span>/g, '') : "Servicio"}`} 
-                className="featured-full-image" 
-                loading="lazy"
-              />
-            </div>
-          )}
+          <div className="featured-image-container">
+            <img 
+              src={`/img/hero/${sectionImage}`} 
+              alt={`Detalle de trabajo - ${title ? title.replace(/<span>|<\/span>/g, '') : "Servicio"}`} 
+              className="featured-full-image" 
+              loading="lazy"
+              onError={(e) => { e.target.onerror = null; e.target.src = '/img/hero/IMG_6014.webp'; }}
+            />
+          </div>
           <div className="asymmetric-section-text">
             <h2>Compromiso de <span>Calidad AKN</span></h2>
             <p>Nuestros ingenieros y técnicos altamente especializados realizan cada trabajo bajo estrictas normativas nacionales e internacionales. Garantizamos soluciones eficientes que minimizan riesgos y costos operativos en su empresa.</p>

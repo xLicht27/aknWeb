@@ -7,7 +7,7 @@ const RedesContraIncendios = () => {
       title="Sistema de Redes <span>Contra Incendios</span>"
       subtitle="Protección integral de infraestructuras"
       description="Garantice la seguridad de sus recintos mediante un mantenimiento riguroso de todo el sistema contra incendios, cumpliendo con los estándares de seguridad industrial más exigentes."
-      image="/img/hero/IMG_4624.webp"
+      images={['IMG_4624.webp', 'IMG_1558.webp']}
       highlights={[
         {
           title: "Detección y Alarma",

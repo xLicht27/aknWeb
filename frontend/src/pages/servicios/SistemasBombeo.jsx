@@ -7,7 +7,7 @@ const SistemasBombeo = () => {
             title="Sistemas de <span>Bombeo</span>"
             subtitle="Soluciones hidráulicas y electromecánicas"
             description="Ofrecemos servicios de mantenimiento, diseño e implementación para garantizar la presión y el flujo constante de agua o fluidos en su proyecto industrial o residencial."
-            image="/img/hero/IMG_1576.webp"
+            images={['IMG_0465.webp', 'IMG_6014.webp']}
             highlights={[
                 {
                     title: "Mantenimiento Preventivo",
