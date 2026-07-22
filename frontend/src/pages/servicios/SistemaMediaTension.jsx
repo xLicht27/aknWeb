@@ -4,10 +4,16 @@ import ServiceLayout from '../../components/ServiceLayout';
 const SistemaMediaTension = () => {
   return (
     <ServiceLayout
-      title="Sistema de <span>Media Tensión</span>"
-      subtitle="Proyectos y mantenimiento en media tensión"
-      description="Ejecución de proyectos de impacto, montajes y mantenimiento preventivo-correctivo de subestaciones eléctricas, con personal calificado."
-      image="/img/hero/IMG_2177.webp"
+      title="Media y Baja <span>Tensión</span>"
+      subtitle="Proyectos y mantenimiento especializado"
+      description="Ejecución de proyectos de impacto, montajes y mantenimiento preventivo-correctivo de subestaciones eléctricas y redes de distribución, con personal calificado."
+      points={[
+        "Diseño, instalación y mantenimiento preventivo."
+      ]}
+      images={[
+        "IMG_5995.webp",
+        "IMG_6732.webp"
+      ]}
       highlights={[
         {
           title: "Gestión de Proyectos",

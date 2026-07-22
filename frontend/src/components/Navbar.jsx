@@ -52,7 +52,8 @@ export default function Navbar() {
                             <Link to="/servicios/tableros-electricos" onClick={closeMenu}>Tableros Eléctricos</Link>
                             <Link to="/servicios/sistema-de-media-tension" onClick={closeMenu}>Media y Baja Tensión</Link>
                             <Link to="/servicios/analisis-sistema-electrico" onClick={closeMenu}>Mantenimiento Eléctrico</Link>
-                            <Link to="/servicios/grupos-electrogenos" onClick={closeMenu}>Infraestructura Eléctrica</Link>
+                            <Link to="/servicios/infraestructura-electrica" onClick={closeMenu}>Infraestructura Eléctrica</Link>
+                            <Link to="/servicios/grupos-electrogenos" onClick={closeMenu}>Grupos Electrógenos</Link>
                             <Link to="/servicios/equipos-de-proteccion" onClick={closeMenu}>Equipos de Protección</Link>
                             <Link to="/servicios/eficiencia-energetica" onClick={closeMenu}>Eficiencia Energética</Link>
                             <Link to="/servicios/redes-contra-incendios" onClick={closeMenu}>Redes Contra Incendios</Link>

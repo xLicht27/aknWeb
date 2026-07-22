@@ -32,7 +32,12 @@ export default function Footer() {
                         <Link to="/servicios/tableros-electricos">Tableros Eléctricos</Link>
                         <Link to="/servicios/sistema-de-media-tension">Media y Baja Tensión</Link>
                         <Link to="/servicios/analisis-sistema-electrico">Mantenimiento Eléctrico</Link>
-                        <Link to="/servicios/grupos-electrogenos">Infraestructura Eléctrica</Link>
+                        <Link to="/servicios/infraestructura-electrica">Infraestructura Eléctrica</Link>
+                        <Link to="/servicios/grupos-electrogenos">Grupos Electrógenos</Link>
+                        <Link to="/servicios/equipos-de-proteccion">Equipos de Protección</Link>
+                        <Link to="/servicios/eficiencia-energetica">Eficiencia Energética</Link>
+                        <Link to="/servicios/redes-contra-incendios">Redes Contra Incendios</Link>
+                        <Link to="/servicios/sistemas-de-bombeo">Sistemas de Bombeo</Link>
                     </div>
 
                     <div className="footer-col">

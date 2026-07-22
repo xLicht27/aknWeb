@@ -14,10 +14,11 @@ import Contacto from './pages/Contacto';
 import Reclamaciones from './pages/Reclamaciones';
 import TablerosElectricos from './pages/servicios/TablerosElectricos';
 import AnalisisSistemaElectrico from './pages/servicios/AnalisisSistemaElectrico';
-import GruposElectrogenos from './pages/servicios/GruposElectrogenos';
-import EquiposProteccion from './pages/servicios/EquiposProteccion';
 import SistemaMediaTension from './pages/servicios/SistemaMediaTension';
 import EficienciaEnergetica from './pages/servicios/EficienciaEnergetica';
+import InfraestructuraElectrica from './pages/servicios/InfraestructuraElectrica';
+import GruposElectrogenos from './pages/servicios/GruposElectrogenos';
+import EquiposProteccion from './pages/servicios/EquipoProteccion';
 import RedesContraIncendios from './pages/servicios/RedesContraIncendios';
 import SistemasBombeo from './pages/servicios/SistemasBombeo';
 
@@ -33,10 +34,11 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/servicios/tableros-electricos" element={<TablerosElectricos />} />
           <Route path="/servicios/analisis-sistema-electrico" element={<AnalisisSistemaElectrico />} />
-          <Route path="/servicios/grupos-electrogenos" element={<GruposElectrogenos />} />
-          <Route path="/servicios/equipos-de-proteccion" element={<EquiposProteccion />} />
           <Route path="/servicios/sistema-de-media-tension" element={<SistemaMediaTension />} />
           <Route path="/servicios/eficiencia-energetica" element={<EficienciaEnergetica />} />
+          <Route path="/servicios/infraestructura-electrica" element={<InfraestructuraElectrica />} />
+          <Route path="/servicios/grupos-electrogenos" element={<GruposElectrogenos />} />
+          <Route path="/servicios/equipos-de-proteccion" element={<EquiposProteccion />} />
           <Route path="/servicios/redes-contra-incendios" element={<RedesContraIncendios />} />
           <Route path="/servicios/sistemas-de-bombeo" element={<SistemasBombeo />} />
           <Route path="/nosotros" element={<Nosotros />} />

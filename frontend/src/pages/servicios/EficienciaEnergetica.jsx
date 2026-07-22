@@ -7,7 +7,17 @@ const EficienciaEnergetica = () => {
       title="Eficiencia <span>Energética</span>"
       subtitle="Optimización y energías renovables"
       description="Ahorre costos operativos y reduzca su huella de carbono mediante la implementación de soluciones energéticas modernas y optimización tarifaria."
-      image="/img/hero/IMG_6009.webp"
+      points={[
+        "Diseño y ejecución de proyectos utilizando energías renovables",
+        "Diseño e instalación de tecnología LED",
+        "Optimización tarifaria",
+        "Sistema de bancos de condensadores y filtros activos"
+      ]}
+      images={[
+        "IMG_1243.webp",
+        "IMG_6574.webp",
+        "IMG_4624.webp"
+      ]}
       highlights={[
         {
           title: "Energías Renovables",

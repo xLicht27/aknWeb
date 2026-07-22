@@ -5,10 +5,25 @@ const AnalisisSistemaElectrico = () => {
   return (
 
     <ServiceLayout
-      title="Análisis del <span>Sistema Eléctrico</span>"
-      subtitle="Diagnóstico y corrección de fallas"
+      title="Mantenimiento <span>Eléctrico</span>"
+      subtitle="Diagnóstico, reparación y automatización"
       description="Evaluamos a profundidad el estado de su sistema eléctrico para prevenir paradas inesperadas y optimizar el consumo de energía en sus instalaciones."
-      image="/img/hero/IMG_6014.webp"
+      points={[
+        "Diagnóstico de fallas operativas",
+        "Diagnóstico de fugas eléctricas",
+        "Instalación, mantenimiento y reparación",
+        "Diseño de planos eléctricos",
+        "Diseño de sistemas automatizados (variadores, PLC)",
+        "Mantenimiento eléctrico general"
+      ]}
+      images={[
+        "IMG_6794.webp",
+        "IMG_2142.webp",
+        "IMG_5521.webp",
+        "IMG_0465.webp",
+        "IMG_5995.webp",
+        "IMG_1211.webp"
+      ]}
       highlights={[
         {
           title: "Diagnóstico y Reparación",

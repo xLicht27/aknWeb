@@ -204,32 +204,64 @@ const Home = () => {
                             Brindamos servicios especializados con los más altos estándares de calidad y seguridad industrial.
                         </p>
                     </div>
+
+                    {/* Grid Uniforme 3x2 de 6 Tarjetas */}
                     <div className="services-grid reveal-stagger">
                         <Link to="/servicios/tableros-electricos" className="service-card">
-                            <div className="service-icon"><i className="fas fa-project-diagram"></i></div>
-                            <h3>Tableros Eléctricos</h3>
-                            <p>Diseño, fabricación y mantenimiento de tableros eléctricos para aplicaciones industriales.</p>
+                            <div className="service-card-body">
+                                <div className="service-icon"><i className="fas fa-project-diagram"></i></div>
+                                <h3>Tableros Eléctricos</h3>
+                                <p>Diseño, instalación y mantenimiento preventivo.</p>
+                            </div>
                             <span className="learn-more">Más información <i className="fas fa-arrow-right"></i></span>
                         </Link>
+
                         <Link to="/servicios/sistema-de-media-tension" className="service-card">
-                            <div className="service-icon"><i className="fas fa-network-wired"></i></div>
-                            <h3>Media y Baja Tensión</h3>
-                            <p>Implementación y mantenimiento de sistemas eléctricos en media y baja tensión.</p>
+                            <div className="service-card-body">
+                                <div className="service-icon"><i className="fas fa-network-wired"></i></div>
+                                <h3>Media y Baja Tensión</h3>
+                                <p>Diseño, instalación y mantenimiento preventivo.</p>
+                            </div>
                             <span className="learn-more">Más información <i className="fas fa-arrow-right"></i></span>
                         </Link>
+
                         <Link to="/servicios/analisis-sistema-electrico" className="service-card">
-                            <div className="service-icon"><i className="fas fa-wrench"></i></div>
-                            <h3>Mantenimiento Eléctrico</h3>
-                            <p>Servicios preventivos y correctivos para garantizar continuidad y seguridad operativa.</p>
+                            <div className="service-card-body">
+                                <div className="service-icon"><i className="fas fa-wrench"></i></div>
+                                <h3>Mantenimiento Eléctrico</h3>
+                                <p>Diagnóstico de fallas, fugas eléctricas, planos, automatización (PLC/Variadores) y mantenimiento general.</p>
+                            </div>
                             <span className="learn-more">Más información <i className="fas fa-arrow-right"></i></span>
                         </Link>
-                        <Link to="/servicios/grupos-electrogenos" className="service-card">
-                            <div className="service-icon"><i className="fas fa-charging-station"></i></div>
-                            <h3>Infraestructura Eléctrica</h3>
-                            <p>Instalaciones eléctricas industriales, canalización, bandejas y distribución de energía.</p>
+
+                        <Link to="/servicios/infraestructura-electrica" className="service-card">
+                            <div className="service-card-body">
+                                <div className="service-icon"><i className="fas fa-charging-station"></i></div>
+                                <h3>Infraestructura Eléctrica</h3>
+                                <p>Diseño, instalación y mantenimiento de grupos electrógenos, sistema contra incendios y bombeo.</p>
+                            </div>
+                            <span className="learn-more">Más información <i className="fas fa-arrow-right"></i></span>
+                        </Link>
+
+                        <Link to="/servicios/eficiencia-energetica" className="service-card">
+                            <div className="service-card-body">
+                                <div className="service-icon"><i className="fas fa-leaf"></i></div>
+                                <h3>Eficiencia Energética</h3>
+                                <p>Proyectos de energías renovables, tecnología LED, optimización tarifaria, bancos de condensadores y filtros activos.</p>
+                            </div>
+                            <span className="learn-more">Más información <i className="fas fa-arrow-right"></i></span>
+                        </Link>
+
+                        <Link to="/servicios/eficiencia-energetica" className="service-card">
+                            <div className="service-card-body">
+                                <div className="service-icon"><div className="service-icon"><i className="fas fa-shield-alt"></i></div></div>
+                                <h3>Sostenibilidad y Soluciones Integrales</h3>
+                                <p>Inversiones rentables orientadas al cuidado del medio ambiente y eficiencia energética corporativa.</p>
+                            </div>
                             <span className="learn-more">Más información <i className="fas fa-arrow-right"></i></span>
                         </Link>
                     </div>
+
                     <div className="text-center mt-48 reveal">
                         <Link to="/servicios/tableros-electricos" className="btn-outline-dark">
                             <i className="fas fa-th-list"></i> Ver Todos los Servicios
