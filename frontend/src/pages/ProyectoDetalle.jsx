@@ -75,7 +75,7 @@ const ProyectoDetalle = () => {
                             <img src={post.feature_image} alt={post.title} style={{ width: '100%', height: 'auto', display: 'block' }} />
                         </div>
                     )}
-                    
+
                     <div className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
 
                     <div style={{ marginTop: '60px', borderTop: '1px solid #e2e8f0', paddingTop: '30px', textAlign: 'center' }}>
@@ -85,6 +85,16 @@ const ProyectoDetalle = () => {
                     </div>
                 </div>
             </section>
+            {/* ============ WHATSAPP FLOAT ============ */}
+            <a
+                href="https://wa.me/51993024474?text=%9A%A1%20Vengo%20de%20la%20web"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="whatsapp-float"
+            >
+                <i className="fab fa-whatsapp"></i>
+                <div className="whatsapp-tooltip">¡Escríbenos!</div>
+            </a>
         </div>
     );
 };

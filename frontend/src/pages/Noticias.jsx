@@ -94,9 +94,9 @@ const Noticias = () => {
                 </div>
             </section>
 
-            {/* WhatsApp Float */}
+            {/* ============ WHATSAPP FLOAT ============ */}
             <a
-                href="https://wa.me/5114513488?text=Hola%2C%20me%20interesa%20solicitar%20información"
+                href="https://wa.me/51993024474?text=%9A%A1%20Vengo%20de%20la%20web"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whatsapp-float"

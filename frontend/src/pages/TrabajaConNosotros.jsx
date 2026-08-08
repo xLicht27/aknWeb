@@ -73,7 +73,7 @@ const TrabajaConNosotros = () => {
               <p style={{ color: 'var(--text-gray)', marginBottom: '24px' }}>
                 Encuentra nuestras vacantes actuales y postula a través de nuestros canales oficiales:
               </p>
-              
+
               <div className="job-portals">
                 <a href="https://www.linkedin.com/in/kevin-jorges-ramos-9b60a23b/" target="_blank" rel="noopener noreferrer" className="btn-portal btn-linkedin">
                   <i className="fab fa-linkedin"></i> LinkedIn Oficial
@@ -84,9 +84,9 @@ const TrabajaConNosotros = () => {
         </div>
       </section>
 
-      {/* WhatsApp Float */}
+      {/* ============ WHATSAPP FLOAT ============ */}
       <a
-        href="https://wa.me/5114513488?text=Hola%2C%20me%20interesa%20solicitar%20información"
+        href="https://wa.me/51993024474?text=%9A%A1%20Vengo%20de%20la%20web"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"
