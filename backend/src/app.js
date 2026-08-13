@@ -9,10 +9,34 @@ const app = express();
 
 // ─── Seguridad y middleware base ───────────────────────────────
 app.use(helmet());
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:3000',
+  'https://akn-web.vercel.app'
+];
+if (process.env.FRONTEND_URL) {
+  allowedOrigins.push(process.env.FRONTEND_URL);
+}
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: (origin, callback) => {
+    // Permitir peticiones sin origen (como curl o servidores)
+    if (!origin) return callback(null, true);
+    
+    const isAllowed = allowedOrigins.includes(origin) || 
+                      origin.endsWith('.vercel.app') || 
+                      origin.endsWith('corporacionakn.com');
+                      
+    if (isAllowed) {
+      callback(null, true);
+    } else {
+      callback(new Error('No permitido por CORS'));
+    }
+  },
   credentials: true,
 }));
+
 app.use(express.json({ limit: '2mb' }));
 app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 
@@ -24,19 +48,19 @@ const formLimiter = rateLimit({
 });
 
 // ─── Rutas públicas ──────────────────────────────────────────────
-app.use('/api/cotizaciones',  formLimiter, require('./routes/public/cotizaciones.routes'));
-app.use('/api/postulaciones', formLimiter, require('./routes/public/postulaciones.routes'));
-app.use('/api/reclamaciones', formLimiter, require('./routes/public/reclamaciones.routes'));
-app.use('/api/servicios',                 require('./routes/public/servicios.routes'));
-app.use('/api/proyectos',                 require('./routes/public/proyectos.routes'));
-app.use('/api/noticias',                  require('./routes/public/noticias.routes'));
+app.use(['/api/cotizaciones', '/cotizaciones'],   formLimiter, require('./routes/public/cotizaciones.routes'));
+app.use(['/api/postulaciones', '/postulaciones'], formLimiter, require('./routes/public/postulaciones.routes'));
+app.use(['/api/reclamaciones', '/reclamaciones'], formLimiter, require('./routes/public/reclamaciones.routes'));
+app.use(['/api/servicios', '/servicios'],                      require('./routes/public/servicios.routes'));
+app.use(['/api/proyectos', '/proyectos'],                      require('./routes/public/proyectos.routes'));
+app.use(['/api/noticias', '/noticias'],                        require('./routes/public/noticias.routes'));
 
 // ─── Rutas del panel de administración ──────────────────────────
-app.use('/api/admin/auth',          require('./routes/admin/auth.routes'));
-app.use('/api/admin/dashboard',     require('./routes/admin/dashboard.routes'));
-app.use('/api/admin/cotizaciones',  require('./routes/admin/cotizaciones.admin.routes'));
-app.use('/api/admin/postulaciones', require('./routes/admin/postulaciones.admin.routes'));
-app.use('/api/admin/reclamaciones', require('./routes/admin/reclamaciones.admin.routes'));
+app.use(['/api/admin/auth', '/admin/auth'],                   require('./routes/admin/auth.routes'));
+app.use(['/api/admin/dashboard', '/admin/dashboard'],             require('./routes/admin/dashboard.routes'));
+app.use(['/api/admin/cotizaciones', '/admin/cotizaciones'],   require('./routes/admin/cotizaciones.admin.routes'));
+app.use(['/api/admin/postulaciones', '/admin/postulaciones'], require('./routes/admin/postulaciones.admin.routes'));
+app.use(['/api/admin/reclamaciones', '/admin/reclamaciones'], require('./routes/admin/reclamaciones.admin.routes'));
 
 // ─── Health check ─────────────────────────────────────────────────
 app.get('/health', (req, res) => {
