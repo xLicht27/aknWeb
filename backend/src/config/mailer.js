@@ -1,27 +1,35 @@
-const nodemailer = require('nodemailer');
-
-const transporter = nodemailer.createTransport({
-  host:   process.env.MAIL_HOST,
-  port:   parseInt(process.env.MAIL_PORT || '587'),
-  secure: false,
-  auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS,
-  },
-});
-
 /**
- * Envía un email HTML
+ * Envía un email HTML usando la API directa de Plunk (fetch)
  * @param {object} opts - { to, subject, html }
  */
 async function sendMail({ to, subject, html }) {
   try {
-    await transporter.sendMail({
-      from: `"Corporación AKN" <${process.env.MAIL_FROM}>`,
-      to,
-      subject,
-      html,
+    const apiKey = process.env.PLUNK_API_KEY;
+    if (!apiKey) {
+      console.warn('⚠️ PLUNK_API_KEY no está configurada. El correo no se enviará.');
+      return;
+    }
+
+    const response = await fetch("https://next-api.useplunk.com/v1/send", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        to,
+        subject,
+        body: html,
+        from: process.env.MAIL_FROM || "noreply@corporacionakn.com"
+      }),
     });
+
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      console.error(`❌ Error de Plunk enviando email a ${to}:`, result);
+    } else {
+      console.log(`✅ Email enviado con éxito a ${to}:`, result);
+    }
   } catch (err) {
     console.error(`❌ Error enviando email a ${to}:`, err.message);
   }
